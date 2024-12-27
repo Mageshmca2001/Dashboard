@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="icon" href="icon.png" type="x-icon" />
+  <link rel="icon" href="../images/lg.png" type="x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -63,7 +63,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../images/favicon.png" />
+  <link rel="shortcut icon" href="../images/lg.png" />
 </head>
 <body>
   <div class="container-scroller d-flex">
@@ -132,33 +132,26 @@
 
       <div class="container mx-auto p-4">
         <h1 class="text-3xl font-bold mb-4">CHART</h1>
-        <div class="bg-gray-300 p-4 rounded shadow-md mb-4">
-        
-            <div class="max-w-7xl mx-auto p-6">
-                <!-- Title and Header -->
-                <div class="flex justify-between items-center bg-white shadow-md p-4 rounded-lg">
-                    <h1 class="text-xl font-bold text-gray-700">📈 Real-Time Chart</h1>
-                    <button id="refreshButton" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
-                        Refresh Data
-                    </button>
-                </div>
-        
+        <div class="container mx-auto p-4">
+          <div class="bg-gray-300 p-4 rounded shadow-md mb-4">
+            <div class="container mx-auto p-4">
+          
+          
+              <div class="bg-white p-4 rounded shadow-md mb-4">
                 <!-- Chart Container -->
-                <div id="chartContainer" class="mt-6 h-80 bg-white rounded-lg shadow-md">
+                <div class="container mx-auto p-4">
+                  <h1 class="text-3xl font-bold mb-4 underline">Dynamic Bar Chart with Push & Pop Colors</h1>
                   
-                  <button id="refreshButton">Refresh Data</button>
-                  <button id="insertButton">Insert Value</button>
-                  <button id="popButton">Pop Value</button>
-        
-                    <!-- Chart will render here -->
+                  <div class="bg-white p-4 rounded shadow-md mb-4">
+                    <div class="max-w-7xl mx-auto p-6">
+                      <div class="flex justify-between items-center bg-gray-300shadow-md p-4 rounded-lg">
+          
+                      </div>
+                      <canvas id="barChart" class="mt-6"></canvas>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-
-        
-
-
-  </div>
+              
   </div>
 
 

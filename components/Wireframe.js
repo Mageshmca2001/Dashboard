@@ -1,4 +1,4 @@
-window.onload = function () {
+/*window.onload = function () {
     const dataPoints = [];
     let chart;
 
@@ -134,4 +134,95 @@ window.onload = function () {
 
     // Initialize the chart and fetch initial data
     initializeChart();
-};
+};*/''
+
+
+const ctx = document.getElementById('barChart').getContext('2d');
+
+    // Initialize Chart
+    const barChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [],
+        datasets: [{
+          label: 'Sales',
+          data: [],
+          backgroundColor: [],
+          borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+          }
+        },
+        plugins: {
+          legend: {
+            display: true
+          }
+        }
+      }
+    });
+
+    // Function to Randomly Choose Between Orange or Green for Push Color
+    function getRandomColor() {
+      const colors = [
+        'rgba(255, 165, 0, 0.6)', // Orange
+        'rgba(0, 128, 0, 0.6)'    // Green
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Function to Get Current Time in HH:MM:SS Format
+    function getCurrentTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      return `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Function to Push and Pop Data Automatically
+    function autoUpdateChart() {
+      const newTimeLabel = getCurrentTime();  // Get current time for label
+      const newValue = Math.floor(Math.random() * 100) + 1;
+
+      // Add New Data (Push)
+      barChart.data.labels.push(newTimeLabel);
+      barChart.data.datasets[0].data.push(newValue);
+
+      // Randomly choose color for the new bar (either orange or green)
+      const newColor = getRandomColor();
+      barChart.data.datasets[0].backgroundColor.push(newColor);
+
+      // Handle Pop (if more than 10 bars)
+      if (barChart.data.labels.length > 10) {
+        // Temporarily change the color of the bar to green before removing
+        const poppedIndex = 0; // Index of the bar to be removed
+        barChart.data.datasets[0].backgroundColor[poppedIndex] = 'rgba(0, 128, 0, 0.6)'; // Green
+
+        // Remove the bar after a brief delay
+        setTimeout(() => {
+          barChart.data.labels.shift(); // Remove label
+          barChart.data.datasets[0].data.shift(); // Remove data
+          barChart.data.datasets[0].backgroundColor.shift(); // Remove color
+          barChart.update(); // Update chart after removal
+        }, 500); // Delay of 500ms to show the green color
+      }
+
+      // Update Chart to Reflect Push
+      barChart.update();
+    }
+
+    // Set Interval to Automatically Update the Chart every 2 seconds
+    setInterval(autoUpdateChart, 2000); // Update every 2 seconds
