@@ -21,6 +21,7 @@
   <link rel="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <link rel="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.bootstrap5.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -169,17 +170,17 @@
                 <thead>
                     <tr>  
                       <th id=  "Date" class= "border border-gray-300 text-white text-center bg-blue-500 px-4 py-2"> Hours / Time <i class="fas fa-sort"></i></th>
-                       <th id= "tested" class="border border-gray-300 text-white bg-blue-500 px-4 py-2"> No.of.Meters Tested  <i class="fas fa-sort"></i></th>
-                       <th id= "completed" class="border border-gray-300 text-white bg-blue-500 px-4 py-2"> No.of.Meters Completed  <i class="fas fa-sort"></i></th>
-                       <th id= "Reworked" class="border border-gray-300 text-white bg-blue-500 px-4 py-2"> No.of.Meters Reworked <i class="fas fa-sort"></i></th>
-                       <th id= "pending" class="border border-gray-300 text-white bg-blue-500 px-4 py-2"> No.of.Meters Pending<i class="fas fa-sort"></i></th>
+                       <th id= "tested" class="border border-gray-300 text-white text-center bg-blue-500 px-4 py-2"> No.of.Meters Tested  <i class="fas fa-sort"></i></th>
+                       <th id= "completed" class="border border-gray-300 text-white text-center bg-blue-500 px-4 py-2"> No.of.Meters Completed  <i class="fas fa-sort"></i></th>
+                       <th id= "Reworked" class="border border-gray-300 text-white text-center bg-blue-500 px-4 py-2"> No.of.Meters Reworked <i class="fas fa-sort"></i></th>
+                       <th id= "pending" class="border border-gray-300 text-white text-center bg-blue-500 px-4 py-2"> No.of.Meters Pending<i class="fas fa-sort"></i></th>
                     </tr>
 
                 </thead>
                 <tbody>
 
                   <tr>
-                  <td class= "border border-gray-300 text-center px-4 py-2">12:10:01</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
                   <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
                   <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
@@ -187,540 +188,695 @@
                   </tr>
                  
                   <tr>
-                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:11:02</td>
-                  <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
-                  <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                  <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                   </tr>
                  
                  <tr>
-                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:12:03</td>
-                  <td class= "border border-gray-300 text-center px-4  py-2">4,000</td>
-                  <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                  <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                  <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                  <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                   </tr>
                   
                   <tr>
-                   <td class= "border border-gray-300 text-center px-4 py-2"> 12:13:04</td>
-                   <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                   <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                   <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                   <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                   <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                   <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
                    </tr> 
                  
                  <tr>
-                 <td class= "border border-gray-300 text-center px-4 py-2">  12:14:05</td>
-                 <td class= "border border-gray-300 text-center px-4  py-2">5,000</td>
-                 <td class= "border border-gray-300 text-center px-4 py-2">1,000</td> 
-                 <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                 <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                 <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                 <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                 <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                   </tr> 
                  
                  
                      <tr>
-                       <td class= "border border-gray-300 text-center px-4 py-2"> 12:15:04</td>
-                       <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                       <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                        </tr> 
                  
                        <tr>
-                       <td class= "border border-gray-300 text-center px-4 py-2"> 12:16:05</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                       <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                       </tr> 
+                 
+                       <tr>
+                       <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                        </tr> 
                  
                        <tr>
-                       <td class= "border border-gray-300 text-center px-4 py-2"> 12:17:06</td>
-                       <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                       <td class= "border border-gray-300 text-center px-4 py-2"> 12:18:07</td>
-                       <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                        </tr> 
                  
                         <tr>
-                        <td class= "border border-gray-300 text-center px-4 py-2"> 12:19:08</td>
-                        <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
                         <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                         <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                         </tr> 
                  
                         <tr>
-                        <td class= "border border-gray-300 text-center px-4 py-2"> 12:20:09</td>
-                        <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                        <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
                         <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                         </tr> 
                  
                  
                         <tr>
-                        <td class= "border border-gray-300 text-center px-4 py-2"> 12:21:10</td>
-                        <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
                         </tr> 
                  
                  
                        <tr>
-                       <td class= "border border-gray-300 text-center px-4 py-2"> 12:22:11</td>
-                       <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                       <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                         </tr> 
                  
                  
-                     <tr>
-                     <td class= "border border-gray-300 text-center px-4 py-2"> 12:23:12</td>
-                     <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                    <td class=  "border border-gray-300 text-center px-4 py-2">500</td>
-                     </tr> 
-                 
-                    <tr>
-                   <td class= "border border-gray-300 text-center px-4 py-2"> 12:24:13</td>
-                   <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                   </tr> 
-                 
-                    <tr>
-                     <td class= "border border-gray-300 text-center px-4 py-2"> 12:25:14</td>
-                     <td class= "border border-gray-300 text-center px-4  py-2">6,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                    </tr> 
-                 
-                     <tr>
-                     <td class= "border border-gray-300 text-center px-4 py-2"  > 12:26:15</td>
-                     <td class= "border border-gray-300 text-center px-4  py-2" >6,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2"  >1,000</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2"  >500</td>
-                     <td class= "border border-gray-300 text-center px-4 py-2"  >500</td>
-                     </tr> 
-                 
-                      <tr>
-                      <td class= "border border-gray-300 text-center px-4 py-2" > 12:27:16</td>
-                      <td class= "border border-gray-300 text-center px-4  py-2" >6,000</td>
-                      <td class= "border border-gray-300 text-center px-4 py-2" >3,000</td>
-                      <td class= "border border-gray-300 text-center px-4 py-2" >1,500</td>
-                      <td class= "border border-gray-300 text-center px-4 py-2" >1,500</td>
-                      </tr> 
-                 
-                      <tr>
-                      <td class="border border-gray-300 text-center px-4 py-2"> 12:28:17</td>
-                      <td class="border border-gray-300 text-center px-4  py-2">4,000</td>
-                      <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                      <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                      <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                      </tr> 
-                 
-                      <tr>
-                       <td class="border border-gray-300 text-center px-4 py-2"> 12:29:18</td>
-                       <td class="border border-gray-300 text-center px-4  py-2">5,000</td>
-                       <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                       <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                      </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2">12:30:19</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:31.20</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:32:21</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:33:22</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:35:23</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:36:24</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:37:25</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:38:26</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:39:27</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:40:28</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:41:29</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">5,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:42:30</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2">12:43:31</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">2.500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:44:32</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:46:33</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2">12:47:34</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:48:35</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:49:36</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">5,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:50:37</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">5,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:51:38</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:52:39</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">5,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:53:40</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:54:41</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">3,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:55:42</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">4,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:56:43</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">5,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:57:44</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:58:45</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                 
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:59:46</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                       <tr>
-                        <td class= "border border-gray-300 text-center px-4 py-2">12:10:01</td>
-                        <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                        </tr>
                         <tr>
-                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                          <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                          <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                          <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                          <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                           </tr>
+                         
+                         <tr>
+                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                          <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                          </tr>
+                          
                           <tr>
-                            <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                            <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                            <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                            </tr>
-                            <tr>
-                              <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                              <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                              <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                              </tr>
-                              <tr>
-                                <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                </tr>
+                           <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                           <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                           <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                           <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                           <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                           </tr> 
+                         
+                         <tr>
+                         <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                         <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                         <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                          </tr> 
+                         
+                         
+                             <tr>
+                               <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                               <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                               </tr> 
+                         
+                               <tr>
+                               <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                               <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                               </tr> 
+                         
+                               <tr>
+                               <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                               </tr> 
+                         
+                               <tr>
+                               <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                               </tr> 
+                         
                                 <tr>
-                                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                  <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                  <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                </tr> 
+                         
+                                <tr>
+                                <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                </tr> 
+                         
+                         
+                                <tr>
+                                <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                </tr> 
+                         
+                         
+                               <tr>
+                               <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                </tr> 
+                                <tr>
+                                  <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                                  <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                   </tr>
+                                 
+                                 <tr>
+                                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                                  <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                  </tr>
+                                  
                                   <tr>
-                                    <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                    <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                    <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                    <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                    <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                    </tr>
-                                    <tr>
-                                      <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                      <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                      <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                      <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                      <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                      </tr>
-                                      <tr>
-                                        <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                        <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                        </tr>
+                                   <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                                   <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                   <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                   <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                   <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                                   </tr> 
+                                 
+                                 <tr>
+                                 <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                                 <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                 <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                  </tr> 
+                                 
+                                 
+                                     <tr>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                                       <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                       </tr> 
+                                 
+                                       <tr>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                                       <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                       </tr> 
+                                 
+                                       <tr>
+                                       <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                       </tr> 
+                                 
+                                       <tr>
+                                       <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                       </tr> 
+                                 
                                         <tr>
-                                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                          <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                          <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                        </tr> 
+                                 
+                                        <tr>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                        <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                        </tr> 
+                                 
+                                 
+                                        <tr>
+                                        <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                        </tr> 
+                                 
+                                 
+                                       <tr>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                        </tr> 
+                 
+                                        <tr>
+                                          <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                                          <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                           </tr>
-
+                                         
+                                         <tr>
+                                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                                          <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                          </tr>
+                                          
                                           <tr>
-                                            <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                            <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                            <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                            </tr>
-                                            <tr>
-                                              <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                              <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                              <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                              </tr>
-                                              <tr>
-                                                <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                </tr>
+                                           <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                                           <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                           <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                           <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                           <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                                           </tr> 
+                                         
+                                         <tr>
+                                         <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                                         <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                         <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                          </tr> 
+                                         
+                                         
+                                             <tr>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                                               <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                               </tr> 
+                                         
+                                               <tr>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                                               <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                               </tr> 
+                                         
+                                               <tr>
+                                               <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                               </tr> 
+                                         
+                                               <tr>
+                                               <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                               </tr> 
+                                         
                                                 <tr>
-                                                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                  <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                  <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                </tr> 
+                                         
+                                                <tr>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                                <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                </tr> 
+                                         
+                                         
+                                                <tr>
+                                                <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                </tr> 
+                                         
+                                         
+                                               <tr>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                </tr> 
+                                                <tr>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                                                  <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                                                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                                   <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                                   </tr>
+                                                 
+                                                 <tr>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                                                  <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                  </tr>
+                                                  
                                                   <tr>
-                                                    <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                    <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                    <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                    <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                    <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                      <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                      <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                      <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                      <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                        <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                        <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                        </tr>
+                                                   <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                                                   <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                   <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                   <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                   <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                                                   </tr> 
+                                                 
+                                                 <tr>
+                                                 <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                                                 <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                 <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                  </tr> 
+                                                 
+                                                 
+                                                     <tr>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                                                       <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                       </tr> 
+                                                 
+                                                       <tr>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                       </tr> 
+                                                 
+                                                       <tr>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                       </tr> 
+                                                 
+                                                       <tr>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                       </tr> 
+                                                 
                                                         <tr>
-                                                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                          <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                          <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                        </tr> 
+                                                 
+                                                        <tr>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                                        <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                        </tr> 
+                                                 
+                                                 
+                                                        <tr>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                        </tr> 
+                                                 
+                                                 
+                                                       <tr>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                        </tr> 
+                                                        <tr>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                                                          <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
                                                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                                           <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                                           </tr>
+                                                         
+                                                         <tr>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                                                          <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                          <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                          </tr>
+                                                          
                                                           <tr>
-                                                            <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                            <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                            <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                            <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                            </tr>
-                                                            <tr>
-                                                              <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                              <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                              <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
-                                                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                              <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                              </tr>
-                                                              <tr>
-                                                                <td class= "border border-gray-300 text-center px-4 py-2"> 12:10:01</td>
-                                                                <td class= "border border-gray-300 text-center px-4  py-2">2,000</td>
-                                                                <td class= "border border-gray-300 text-center px-4 py-2">1,000</td>
+                                                           <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                                                           <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                           <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                           <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                           <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                                                           </tr> 
+                                                         
+                                                         <tr>
+                                                         <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                                                         <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                         <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                                                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                         <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                          </tr> 
+                                                         
+                                                         
+                                                             <tr>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                                                               <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                               </tr> 
+                                                         
+                                                               <tr>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                                                               <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                               </tr> 
+                                                         
+                                                               <tr>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                               </tr> 
+                                                         
+                                                               <tr>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                               </tr> 
+                                                         
+                                                                <tr>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
                                                                 <td class= "border border-gray-300 text-center px-4 py-2">500</td>
                                                                 <td class= "border border-gray-300 text-center px-4 py-2">500</td>
-                                                                </tr>
-                       <tr>
-                         <td class="border border-gray-300 text-center px-4 py-2"> 12:60:47</td>
-                         <td class="border border-gray-300 text-center px-4  py-2">6,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">1,000</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                         <td class="border border-gray-300 text-center px-4 py-2">500</td>
-                       </tr> 
-                
+                                                                </tr> 
+                                                         
+                                                                <tr>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                                                <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                </tr> 
+                                                         
+                                                         
+                                                                <tr>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                                                <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                                <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                </tr> 
+                                                         
+                                                         
+                                                               <tr>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                                                               <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                               <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                </tr> 
+                                                                <tr>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+                                                                  <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                  </tr>
+                                                                 
+                                                                 <tr>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+                                                                  <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                  </tr>
+                                                                  
+                                                                  <tr>
+                                                                   <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
+                                                                   <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                   <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                                   <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                                   <td class= "border border-gray-300 text-center px-4 py-2">3000</td>
+                                                                   </tr> 
+                                                                 
+                                                                 <tr>
+                                                                 <td class= "border border-gray-300 text-center px-4 py-2">16:00</td>
+                                                                 <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                 <td class= "border border-gray-300 text-center px-4 py-2">5,000</td> 
+                                                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                 <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                  </tr> 
+                                                                 
+                                                                 
+                                                                     <tr>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">18:00</td>
+                                                                       <td class= "border border-gray-300 text-center px-4  py-2">3,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">2,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                       </tr> 
+                                                                 
+                                                                       <tr>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">20:00</td>
+                                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,500</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,500</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                       </tr> 
+                                                                 
+                                                                       <tr>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2"> 22:00</td>
+                                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                       </tr> 
+                                                                 
+                                                                       <tr>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2"> 24:00</td>
+                                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                       </tr> 
+                                                                 
+                                                                        <tr>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2"> 02:00 </td>
+                                                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">6,000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                        </tr> 
+                                                                 
+                                                                        <tr>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">04:00</td>
+                                                                        <td class= "border border-gray-300 text-center px-4  py-2">6,500</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                        </tr> 
+                                                                 
+                                                                 
+                                                                        <tr>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2"> 06:00</td>
+                                                                        <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">4,000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">2000</td>
+                                                                        <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+                                                                        </tr> 
+                                                                 
+                                                                 
+                                                                       <tr>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">08:00</td>
+                                                                       <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">5,000</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                       <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+                                                                        </tr> 
+                                                                                                                                                                 
                  
                  </tbody>
             </table>
@@ -743,12 +899,27 @@
   </div>
 </div>
 
+<!-- Bar Chart Section -->
+
+
+<!-- Include Chart.js -->
+
+
+
+
 
 
 
 </div>
 
 
+  </div>
+  
+  <div class="max-w-7xl mx-auto p-4">
+    <div class="flex justify-between items-center bg-gray-300shadow-md p-4 rounded-lg">
+      <h1 class="text-2xl text-black "> Charts </h1>
+    </div>
+    <canvas id="barChart" class="mt-4"></canvas>
   </div>
   </div>
 
@@ -762,7 +933,8 @@
              
                 
 
-
+<!----Wireframe.js----->
+<script src="Wireframe.js"></script>
 <!-- base:js -->
 <script src="../vendors/js/vendor.bundle.base.js"></script>
 <!-- endinject -->

@@ -137,7 +137,7 @@
 };*/''
 
 
-const ctx = document.getElementById('barChart').getContext('2d');
+/*const ctx = document.getElementById('barChart').getContext('2d');
 
     // Initialize Chart
     const barChart = new Chart(ctx, {
@@ -225,4 +225,28 @@ const ctx = document.getElementById('barChart').getContext('2d');
     }
 
     // Set Interval to Automatically Update the Chart every 2 seconds
-    setInterval(autoUpdateChart, 2000); // Update every 2 seconds
+    setInterval(autoUpdateChart, 2000); // Update every 2 seconds*/
+
+
+    const ctx = document.getElementById('barChart').getContext('2d');
+  const barChart = new Chart(ctx, {
+    type: 'bar', // Bar chart type
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May'], // X-axis labels
+      datasets: [{
+        label: 'Meter Details',
+        data: [12, 19, 3, 5, 2], // Data for the bar chart
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Bar color
+        borderColor: 'rgba(54, 162, 235, 1)', // Border color
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true // Y-axis starts from 0
+        }
+      }
+    }
+  });
