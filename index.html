@@ -1,93 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Login Page</title>
-    <!-- Import TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Import Google Fonts (Poppins) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <!-- Add custom Tailwind config for font -->
-    <link rel="shortcut icon" href="../images/lg.png" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/lg.png" />
 </head>
-<body class="bg-gradient-to-br from-blue-800 to-blue-400 flex items-center justify-center min-h-screen font-poppins">
-    <div class="bg-white rounded-lg p-8 w-80 relative">
-        <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
-            <img alt="Pinterest logo" class="rounded-full border-4 border-gray-200" height="100" src="./images/lg.png" width="100"/>
+<body class="bg-cover bg-center" style="background-image: url('images/city.png');">
+
+  <div class="flex items-center justify-center h-screen font-poppins">
+    <div class="bg-blue-600 bg-opacity-80 backdrop-blur-md rounded-lg p-8 shadow-lg w-full max-w-md">
+      <div class="flex flex-col items-center">
+        <img src="./images/lg.png" alt="Logo" class="w-24 h-24 rounded-full mb-4">
+
+        <h2 class="text-white text-2xl font-semibold mb-6">LOG IN</h2>
+      </div>
+
+      <form class="space-y-6">
+        <div class="relative input-container">
+          <i class="fas fa-user absolute left-3 top-3 text-white"></i>
+          <input type="text" placeholder="Username" class="w-full pl-10 pr-4 py-2 rounded-lg bg-transparent border-b-2 border-gray-300 text-white focus:outline-none focus:border-white placeholder-white">
         </div>
-        <form class="mt-16">
-          <div class="mb-4">
-            <label class="block relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <i class="fas fa-user text-white bg-sky-500 p-2 rounded-l-lg"></i>
-                </span>
-                <input class="pl-12 pr-4 py-2 w-full rounded-lg border border-black bg-white text-gray-700 focus:outline-none focus:border-sky-500" placeholder="username" type="text"/>
-            </label>
+
+        <div class="relative input-container">
+          <i class="fas fa-lock absolute left-3 top-3 text-white"></i>
+          <input type="password" placeholder="Password" class="w-full pl-10 pr-4 py-2 rounded-lg bg-transparent border-b-2 border-gray-300 text-white focus:outline-none focus:border-white placeholder-white">
         </div>
-        <div class="mb-4">
-            <label class="block relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <i class="fas fa-key text-white bg-sky-500 p-2 rounded-l-lg"></i>
-                </span>
-                <input class="pl-12 pr-4 py-2 w-full rounded-lg border border-black bg-white text-gray-700 focus:outline-none focus:border-sky-500" placeholder="password" type="password"/>
-            </label>
+
+        <div class="flex items-center">
+          <input type="checkbox" id="remember" class="form-checkbox h-4 w-4 text-purple-600">
+          <label for="remember" class="ml-2 text-white">Remember me</label>
         </div>
-            
-            
-       <br>
-     
-     
-
-
-
-<!-- Dropdown Menu -->
-
-          
-          
-
-            <div class="mb-4 flex items-center">
-                <input class="mr-2" id="remember-me" type="checkbox"/>
-                <label class="text-black" for="remember-me">
-                    Remember me
-                </label>
-            </div>
-            
         
+        <button type="submit" class="w-full py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition duration-300">
+          Login
+        </button>
+      </form>
 
-            <div class="mb-4">
-              <a href="index2.html" class="w-full block text-center py-2 bg-sky-500 text-white rounded-lg">
-                  Login
-              </a>
-          </div>
-          
-            <div class="text-center text-black">
-                <p>
-                    Don't have an account?
-                    <a class="text-black" href="#">
-                        Sign Up
-                    </a>
-                </p>
-                <p>
-                    <a class="text-black" href="#">
-                        Forgot your password?
-                    </a>
-                </p>
-            </div>
-        </form>
+      <div class="text-center mt-4">
+        <a href="#" class="text-white text-sm hover:underline">Forgot Password?</a>
+      </div>
     </div>
+  </div>
+
 </body>
 </html>
