@@ -37,18 +37,14 @@
           <label for="remember" class="ml-2 text-white">Remember me</label>
         </div>
         
-        <button type="button" onclick="navigateToLogin(event)" class="w-full py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition duration-300">
-          Login
-        </button>
-        
-        <script>
-          function navigateToLogin(event) {
-            event.preventDefault();  // Prevent the default action if needed
-            // Do something before navigation, like validation or an API call
-            window.location.href = '/index2.html';  // Replace with your desired URL
-          }
-        </script>
-        
+        <a 
+  href="index2.html" 
+  class="w-full py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition duration-300 text-center block"
+>
+  Login
+</a>
+
+           
       </form>
 
       <div class="text-center mt-4">
