@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/lg.png" />
 </head>
-<body class="bg-cover bg-center" style="background-image: url('images/city.png');">
+<body class="bg-cover bg-center" style="background-image: url('./images/Mac.jpg');">
+  <div class="absolute inset-0 bg-white bg-opacity-60 z-0"></div>
 
   <div class="flex items-center justify-center h-screen font-poppins">
-    <div class="bg-blue-600 bg-opacity-80 backdrop-blur-md rounded-lg p-8 shadow-lg w-full max-w-md">
+    <div class="bg-blue-600 bg-opacity-80 backdrop-blur-md rounded-lg p-8 shadow-lg w-100">
       <div class="flex flex-col items-center">
         <img src="./images/lg.png" alt="Logo" class="w-24 h-24 rounded-full mb-4">
 
@@ -35,9 +37,18 @@
           <label for="remember" class="ml-2 text-white">Remember me</label>
         </div>
         
-        <button type="submit" class="w-full py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition duration-300">
+        <button type="button" onclick="navigateToLogin(event)" class="w-full py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition duration-300">
           Login
         </button>
+        
+        <script>
+          function navigateToLogin(event) {
+            event.preventDefault();  // Prevent the default action if needed
+            // Do something before navigation, like validation or an API call
+            window.location.href = '/index2.html';  // Replace with your desired URL
+          }
+        </script>
+        
       </form>
 
       <div class="text-center mt-4">
@@ -45,6 +56,8 @@
       </div>
     </div>
   </div>
+
+  <script src="index.js"></script>
 
 </body>
 </html>
