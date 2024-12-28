@@ -20700,7 +20700,9 @@ dl li {
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
-  .sidebar-offcanvas {
+
+  .sidebar-offcanvas
+   {
     position: fixed;
     max-height: calc(100vh - 65px);
     top: 65px;
@@ -20717,28 +20719,30 @@ dl li {
 }
 
 /* Navbar */
-.navbar {
-  font-weight: 400;
-  transition: background 0.25s ease;
-  -webkit-transition: background 0.25s ease;
-  -moz-transition: background 0.25s ease;
-  -ms-transition: background 0.25s ease;
-  background: url(../images/other/navbar-cover.jpg) center center no-repeat;
-  background-size: cover;
-  height: 262px;
-  width: auto;
+.navbar
+ {
+font-weight: 400;
+transition: background 0.25s ease;
+-webkit-transition: background 0.25s ease;
+-moz-transition: background 0.25s ease;
+-ms-transition: background 0.25s ease;
+height: 262px;
+width: auto;
+
 }
 
-.navbar .navbar-menu-wrapper {
-  transition: width 0.25s ease;
-  -webkit-transition: width 0.25s ease;
-  -moz-transition: width 0.25s ease;
-  -ms-transition: width 0.25s ease;
-  color: #ffffff;
-  margin-left: 1.437rem;
-  margin-right: 1.437rem;
-  width: 100%;
-  height: 65px;
+.navbar .navbar-menu-wrapper
+ {
+transition: width 0.25s ease;
+-webkit-transition: width 0.25s ease;
+-moz-transition: width 0.25s ease;
+-ms-transition: width 0.25s ease;
+color: #ffffff;
+margin-left: 1.437rem;
+margin-right: 1.437rem;
+width: 100%;
+height: 65px;
+
 }
 
 @media (max-width: 991px) {
