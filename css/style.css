@@ -12637,10 +12637,12 @@ input[type="button"].btn-block {
 }
 
 .navbar-toggler:hover {
-  background-color: #0064fae5;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, border-radius 0.3s ease;
+  border-radius: 8px; /* Adjust the radius as needed */
+  
+  border: 1px solid #1d2a44; /* Dark blue border */
+  /* Optional: To keep the background transparent */
 }
+
 
 .navbar .container,
 .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
@@ -21203,8 +21205,6 @@ height: 65px;
   border: 1px solid #ced4da;
   border-left: none;
 }
-
-
 
 .sidebar .sidebar-header {
   padding: 20px;
