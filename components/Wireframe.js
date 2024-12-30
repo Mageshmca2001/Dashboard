@@ -176,3 +176,6 @@ const barChart = new Chart(ctx, {
     }
   }
 });
+
+
+

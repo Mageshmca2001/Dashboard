@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title> Admin Dashboard </title>
   <!-- base:css -->
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -21,10 +26,17 @@
   <link rel="shortcut icon" href="images/lg.png" />
 </head>
 <body>
+
   <div class="container-scroller d-flex">
-    
     <!-- partial:./partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <!-- Logo Section -->
+      <div class="sidebar-header">
+        <img src="./images/logo.png" alt="Logo" class="sidebar-logo">
+        
+        <span class="sidebar-title text-1xl text-white p-6">BGT Dashboard</span> <!-- Added title next to the logo -->
+      </div>
+    
       <ul class="nav">
         <li class="nav-item sidebar-category">
           <p>User Dashboard</p>
@@ -32,7 +44,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="index2.html">
-            <i class='bx bxs-dashboard menu-icon' ></i>
+            <i class="bx bxs-dashboard menu-icon"></i>
             <span class="menu-title">Dashboard</span>
             <div class="badge badge-info badge-pill">2</div>
           </a>
@@ -59,19 +71,275 @@
             <span class="menu-title">Meter Reports</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
+    <script>
+      $(document).ready(function () {
+          $('.navbar-toggler').on('click', function () {
+              $('#sidebar').toggleClass('closed');
+          });
+      });
+    </script>
+
     <div class="container-fluid page-body-wrapper">
-        <!-- partial:./partials/_navbar.html -->
-          <div class="navbar-menu-wrapper d-flex align-items-left justify-content-Home">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-           <span class="bx bx-menu"></span>
-            </button>
-          </div> 
+      <!-- partial:./partials/_navbar.html -->
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="bx bx-menu"></span>
+        </button>
+          
+
+
+          <!-- Add search icon and admin profile to the right side -->
+          <div class="d-flex align-items-center">
+              <!-- Search Icon -->
+              <button class="navbar-toggler" type="button" id="searchIcon">
+                  <i class="fas fa-search text-black text-2xl"></i>
+              </button>
+  
+              <!-- Search Input (Initially hidden) -->
+              <div id="searchInputContainer" class=" ml-5 hidden">
+                  <input type="text" id="searchInput" placeholder="Search..." class=" form-control">
+              </div>
+  
+              <!-- Admin Profile -->
+              <div class="dropdown ml-4">
+
+                  <button class="btn btn-link dropdown-toggle" type="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <i class="fas fa-user-circle text-black" style="font-size: 30px;"></i>
+                  </button>
+
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+
+                      <a class="text-base text-1xl dropdown-item" href="#">Profile</a>
+                      <a class="text-base text-1xl dropdown-item" href="#">Settings</a>
+                      <a class="text-base text-1xl dropdown-item" href="index.html">Logout</a>
+
+                  </div>
+              </div>
           </div>
+          
+      </div>
+      
+  
+      <!-- Header Section -->
+      
+  
+      
+  
+  <!-- Add this JavaScript to toggle the search input -->
+  <script>
+      document.getElementById('searchIcon').addEventListener('click', function() {
+          const searchInputContainer = document.getElementById('searchInputContainer');
+          searchInputContainer.classList.toggle('hidden');
+      });
+  </script>
+  
+  <header class="container mx-auto p-4 bg-white">
+    <div class="flex justify-between items-center">
+        <div class="text-2xl font-semibold text-blue-800">
+            Welcome to BGT Dashboard
         </div>
+    </div>
+</header>
+
+      <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Your cards go here -->
+       
+    <!-- Earnings Card -->
+
+    <div class="bg-blue-100 p-4 rounded-lg shadow">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-blue-700">
+            Present Day
+          </h2>
+          
+          <p class="text-2xl  text-black">
+            3000 M
+          </p>
+        </div>
+        <i class="fas fa-file-alt text-black text-2xl"></i>
+      </div>
+<div
+  class="mt-4 font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
+  onclick="window.location.href='./components/Dailyreport.html';"
+>
+  No.of.Meter Tested
+</div>
+
+<div
+class="mt-4 font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
+onclick="window.location.href='./components/Dailyreport.html';"
+>
+        No.of.Meter Completed
+      </div>
+
+      <div class="mt-4 flex justify-center">
+        <i class="fas fa-flag text-orange-500 text-xl"></i> <!-- Report Icon -->
+      </div>
+    </div>
+
+    <!-- Page Views Card -->
+    <div class="bg-blue-100 p-4 rounded-lg shadow">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-blue-700">
+            Present Week
+          </h2>
+          <p class=" text-2xl text-black">
+            18,000 M
+          </p>
+
+        </div>
+        <i class="fas fa-file-alt text-black text-2xl"></i>
+      </div>
+      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html';">
+        No.of.Meter Tested
+      </div>
+      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html'">
+        No.of.Meter Completed
+      </div>
+      <div class="mt-4 flex justify-center">
+        <i class="fas fa-flag text-green-500 text-xl"></i> <!-- Report Icon -->
+      </div>
+    </div>
+
+    <!-- Task Completed Card -->
+    <div class="bg-blue-100 p-4 rounded-lg shadow">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-blue-700">
+          Present Month
+          </h2>
+          <p class=" text-2xl text-black">
+            540,000 M
+          </p>
+        </div>
+        <i class="fas fa-file-alt text-black text-2xl"></i>
+      </div>
+      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html';">
+        No.of.Meter Tested
+      </div>
+      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html'">
+        No.of.Meter Completed
+      </div>
+      <div class="mt-4 flex justify-center">
+        <i class="fas fa-flag text-red-500 text-xl"></i> <!-- Report Icon -->
+      </div>
+    </div>
+
+    <!-- Downloads Card -->
+    <div class="bg-blue-100 p-4 rounded-lg shadow">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-blue-700">
+            Present Year
+          </h2>
+          <p class=" text-2xl text-black">
+            6,480,000 M 
+          </p>
+        </div>
+        <i class="fas fa-file-alt text-black text-2xl"></i>
+      </div>
+      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html';">
+        No.of.Meter Tested
+      </div>
+      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
+      onclick="window.location.href='./components/Monthlyreport.html'">
+        No.of.Meter Completed
+      </div>
+      <div class="mt-4 flex justify-center">
+        <i class="fas fa-flag text-teal-500 text-xl"></i> <!-- Report Icon -->
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full max-w-4xl mt-4">
+    <div class="flex space-x-12 ">
+        <!-- Performance Section -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex-1">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Performance</h2>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 bg-gray-200 rounded">ALL</button>
+                    <button class="px-3 py-1 bg-gray-200 rounded">1M</button>
+                    <button class="px-3 py-1 bg-gray-200 rounded">6M</button>
+                    <button class="px-3 py-1 bg-gray-200 rounded">1Y</button>
+                </div>
+            </div>
+            <canvas id="performanceChart"></canvas>
+            <div class="flex justify-center mt-4 space-x-4">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
+                    <span>Page Views</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                    <span>Clicks</span>
+                </div>
+            </div>
+        </div>
+
+
+
+ <!-- Conversions Section -->
+
+       <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">
+        Meter's Details
+    </h2>
+    <div class="flex justify-center mb-4">
+        <img alt="Circular chart showing 65.2% returning customers" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/nwecLneXt9tN9EELC8JlgFLpcBe1d2rBxh98ekQXsCDsRDAQB.jpg" width="100"/>
+    </div>
+    <div class="text-center mb-4">
+        <p class="text-2xl font-semibold text-gray-800">
+            65.2%
+        </p>
+        <p class="text-sm text-gray-600">
+            Returning Meter's
+        </p>
+    </div>
+    <div class="flex justify-between mb-4">
+        <div class="text-center">
+            <p class="text-sm text-gray-600">
+                Last Week
+            </p>
+            <p class="text-xl font-semibold text-gray-800">
+                540,000 M
+            </p>
+        </div>
+        <div class="text-center">
+            <p class="text-sm text-gray-600">
+                Present Week
+            </p>
+            <p class="text-xl font-semibold text-gray-800">
+                403,000 M
+            </p>
+        </div>
+    </div>
+    <div class="flex justify-center mb-4">
+        <button class="bg-gray-100 text-gray-800 py-2 px-4 rounded-lg">
+            View Details
+        </button>
+    </div>
+      </div>
+
+
+
+
+</div>
+</div>
+</div>
+
 
 
 
@@ -90,6 +358,8 @@
 
 
 <!----Wireframe.js----->
+<script src="chart.js"></script>
+
 <script src="Wireframe.js"></script>
 <!-- base:js -->
 <script src="./vendors/js/vendor.bundle.base.js"></script>
