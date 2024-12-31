@@ -20741,22 +20741,19 @@ width: auto;
 
 .navbar .navbar-menu-wrapper
  {
-transition: width 0.25s ease;
--webkit-transition: width 0.25s ease;
--moz-transition: width 0.25s ease;
--ms-transition: width 0.25s ease;
-color: #ffffff;
-margin-left: 1.437rem;
-margin-right: 1.437rem;
-width: 100%;
-height: 65px;
-
+  position: fixed; /* Make the navbar fixed at the top */
+  margin:5px;
+  padding:5px;
+  top:0;
+  right:50;
+  width: 100%;
+  z-index: 1000;
 }
 
 @media (max-width: 991px) {
   .navbar .navbar-menu-wrapper {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 

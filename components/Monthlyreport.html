@@ -101,17 +101,22 @@
 
     <div class="container-fluid page-body-wrapper">
         <!-- partial:./partials/_navbar.html -->
-          <div class="navbar-menu-wrapper d-flex align-items-left justify-content-Home">
-            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-800" type="button" data-toggle="minimize">
-              <span class="bx bx-menu text-white text-3xl"></span>
-    
+        <nav class="navbar fixed top-0 right-10% w-full z-50">
+          <div class="navbar-menu-wrapper flex items-center justify-start">
+            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu text-white"></span>
             </button>
-          </div> 
+          </div>
+  
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </nav>
 
       <!-------Show ------->
 
       <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-4">MONTHLY REPORTS</h1>
+        <h1 class="text-3xl font-bold mt-10">MONTHLY REPORTS</h1>
         <div class="bg-gray-300 p-4 rounded shadow-md mb-4">
             <div class="pd-4 flex space-x-4">
               <div class="flex items-center gap-2">
