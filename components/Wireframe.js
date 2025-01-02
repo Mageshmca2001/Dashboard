@@ -179,3 +179,5 @@ const barChart = new Chart(ctx, {
 
 
 
+// Ensure the data-label is added when the page is loaded or resized
+

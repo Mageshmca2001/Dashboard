@@ -21203,20 +21203,49 @@ width: auto;
   border-left: none;
 }
 
-.sidebar .sidebar-header {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Center the content of the sidebar-header */
+.sidebar-header {
+  display: flex;                /* Use flexbox */
+  justify-content: center;      /* Horizontally center */
+  align-items: center;          /* Vertically center */
+  height: 100px;                /* Adjust the height if needed */
+}
+
+sidebar-text {
+  display: flex;                /* Use flexbox */
+  justify-content: center;      /* Horizontally center */
+  align-items: center;          /* Vertically center */
+  height: 100px;                /* Adjust the height if needed */
 }
 
 .sidebar-logo {
-  width: 40px; /* Adjust the size of the logo */
-  height: auto;
+  max-width: 50%;              /* Ensure the logo fits well */
+  max-height: 50%;             /* Maintain logo's aspect ratio */
 }
+
 
 .sidebar.closed .sidebar-title {
     display: none;
 }
 
 
+/* Mobile-first approach (default styling) */
+.logout-btn {
+  @apply px-4 py-2 text-sm;  /* Button padding and text size for small screens */
+}
+
+/* For larger screens (e.g., tablets, desktops) */
+@media (min-width: 768px) {
+  .logout-btn {
+    @apply px-6 py-3 text-base;  /* Larger button padding and text for bigger screens */
+  }
+}
+
+/* Optional: Adjust position for smaller screens */
+@media (max-width: 768px) {
+  .absolute {
+    position: fixed; /* Ensure button remains in the same position while scrolling */
+    top: 3%;
+    right: 4%;
+  }
+}

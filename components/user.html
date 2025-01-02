@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title> BGT- UserDetails</title>
   <!-- base:css -->
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -38,10 +40,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-   
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../css/style.css">
@@ -49,6 +47,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/lg.png" />
 </head>
+
 <body>
   <div class="container-scroller d-flex">
     
@@ -98,93 +97,186 @@
             <span class="menu-title">User Details</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
     <div class="container-fluid page-body-wrapper">
-        <!-- partial:./partials/_navbar.html -->
-        <nav class="navbar fixed top-0 right-10% w-full z-50">
+      <!-- partial:./partials/_navbar.html -->
+
+      <div class="relative h-[10vh] bg-blue-800 bg-center">
+        <div class="absolute inset-0 flex justify-center items-center">
+          <h1 class="text-white text-2xl semibold">Welcome to BGT Dashboard</h1>
+        </div>
+      
+        <!-- Navbar within the same container -->
+        <nav class="navbar fixed top-0 right-50 w-full z-50">
           <div class="navbar-menu-wrapper flex items-center justify-start">
-            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="minimize">
+            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="minimize">
               <span class="mdi mdi-menu text-white"></span>
             </button>
           </div>
-  
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="offcanvas">
+      
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
           </button>
         </nav>
-
- <!-------Show ------->
-      
- <div class="container mx-auto p-8">
-  <div class="flex justify-between items-center mt-10">
-    <h1 class="text-3xl font-semibold text-gray-800">User Details</h1>
-    <button onclick="openAddModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New</button>
-  </div>
-
-  <!-- Table -->
-  <table class="min-w-full table-auto border border-gray-300 bg-blue-500 border-collapse shadow-lg rounded-lg">
-    <thead>
-      <tr>
-        <th class="px-4 py-2 text-center font-medium text-white">ID</th>
-        <th class="px-4 py-2 text-center font-medium text-white">Role</th>
-        <th class="px-4 py-2 text-center font-medium text-white">Date</th>
-        <th class="px-4 py-2 text-center font-medium text-white">Actions</th>
-      </tr>
-    </thead>
-    <tbody id="table-body">
-      <!-- Rows will be inserted here dynamically -->
-    </tbody>
-  </table>
-
-  <!-- Add/Edit Modal -->
-  <div id="modal" class="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded-lg w-96">
-      <h2 class="text-xl font-semibold mb-4" id="modal-title">Add New Entry</h2>
-      <input type="text" id="name-input" placeholder="Name" class="border p-2 w-full mb-4 rounded">
-      <input type="date" id="date-input" class="border p-2 w-full mb-4 rounded">
-      <div class="flex justify-end">
-        <button id="save-btn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Save</button>
-        <button onclick="closeModal()" class="ml-2 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Cancel</button>
       </div>
+
+      <!-- Main Content -->
+      <div class="container mx-auto p-8">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-3xl font-semibold text-gray-800">User Details</h1>
+        </div>
+    
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table id="dataTable" class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th id="Date" class="border border-gray-300 text-white text-center bg-blue-500 px-4 py-2">S.No <i class="fas fa-sort"></i></th>
+                        <th class="border border-gray-300 text-white bg-blue-500 text-center px-4 py-2">User name <i class="fas fa-sort"></i></th>
+                        <th class="border border-gray-300 text-white bg-blue-500 text-center px-4 py-2">Created Date <i class="fas fa-sort"></i></th>
+                        <th class="border border-gray-300 text-white bg-blue-500 text-center px-4 py-2">Role <i class="fas fa-sort"></i></th>
+                        <th class="border border-gray-300 text-white bg-blue-500 text-center px-4 py-2">Status <i class="fas fa-sort"></i></th>
+                        <th class="border border-gray-300 text-white bg-blue-500 px-4 py-2">Action <i class="fas fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">1</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">B.Magesh</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">02.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Software Engineering</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">2</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">U.Kamalesh Waran</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">03.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Software Developer</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">3</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">T.Mukesh</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">04.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Devops Engineering</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">4</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">S.Babu</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">05.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Technical Support</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">5</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">M,Monisha</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">06.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Sr.Software Engineering</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+    
+                    <tr>
+                        <td class="border border-gray-300 text-center px-4 py-2">6</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">S.Dhanush</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">07.12.2024</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Devops Engineering</td>
+                        <td class="border border-gray-300 text-center px-4 py-2">Active</td>
+                        <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                          <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
+                              <i class="fas fa-edit mr-2"></i> Edit
+                          </button>
+                          <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
+                              <i class="fas fa-trash mr-2"></i> Delete
+                          </button>
+                      </td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-</div>
+
+        
 
 
 
+  <!-- Scripts -->
+  <script src="user.js"></script>
+  <script src="script.js"></script>
+  <script src="Wireframe.js"></script>
 
+  <!-- base:js -->
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
 
-
-
-             
-                
-
-<!----Wireframe.js----->
-<script src="user.js"></script>
-<script src="script.js"></script>
-<script src="Wireframe.js"></script>
-<!-- base:js -->
-<script src="../vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page-->
-<script src="../vendors/chart.js/Chart.min.js"></script>
-<!-- End plugin js for this page-->
-<!-- inject:js -->
-<script src="../js/off-canvas.js"></script>
-<script src="../js/hoverable-collapse.js"></script>
-<script src="../js/template.js"></script>
-<!-- endinject -->
-<!-- plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- Custom js for this page-->
- <script src="script.js"></script>
-<script src="../js/dashboard.js"></script>
-<!-- End custom js for this page-->
-
+  <!-- Endinject -->
+  <!-- Plugin js for this page-->
+  <script src="../vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../js/off-canvas.js"></script>
+  <script src="../js/hoverable-collapse.js"></script>
+  <script src="../js/template.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="script.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <!-- End custom js for this page-->
 </div>
 </div>
-  </body>
-  </html>
+
+</body>
+</html>

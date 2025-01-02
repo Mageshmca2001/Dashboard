@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title> BGT-Dashboard </title>
   <!-- base:css -->
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -31,11 +30,13 @@
     <!-- partial:./partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <!-- Logo Section -->
+
       <div class="sidebar-header">
         <img src="./images/logo.png" alt="Logo" class="sidebar-logo">
-        
-        <span class="sidebar-title text-1xl font-semibold text-white p-6">BGT Dashboard</span> <!-- Added title next to the logo -->    
+
       </div>
+      
+    
     
       <ul class="nav">
         <li class="nav-item sidebar-category">
@@ -84,8 +85,6 @@
       </ul>
     </nav>
 
-   
-
 
 
 
@@ -93,247 +92,251 @@
       <!-- partial:./partials/_navbar.html -->
     
       <!-- Fixed Navbar -->
-      <div class="relative h-[10vh] bg-[url('./images/Mac.jpg')] bg-cover bg-center">
-        <!-- Overlay for background opacity -->
-        <div class="absolute inset-0" style="background-color: rgba(255, 255, 255, 0.9);">
-          <nav class="navbar fixed top-0 right-50 w-full z-50">
-            <div class="navbar-menu-wrapper flex items-center justify-start">
-              <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="minimize">
-                <span class="mdi mdi-menu text-white"></span>
-              </button>
-            </div>
-    
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-blue-700" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-menu"></span>
+      <div class="relative h-[10vh] bg-blue-800 bg-center">
+        <div class="relative w-full h-full">
+  <!-- Centered Welcome Message -->
+  <div class="absolute inset-0 flex justify-center items-center">
+    <h1 class="text-white text-2xl font-semibold">Welcome to BGT Dashboard</h1>
+  </div>
+
+  <!-- Logout Button -->
+ 
+  
+</div>
+
+      
+        <!-- Navbar within the same container -->
+        <nav class="navbar fixed top-0 right-50 w-full z-50">
+          <div class="navbar-menu-wrapper flex items-center justify-start">
+            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu text-white"></span>
             </button>
-          </nav>
-        </div>
-      </div>
-
- 
+          </div>
       
-      <div class="container mx-auto p-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <!-- Your cards go here -->
-       
-    <!-- Earnings Card -->
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </nav>
+      </div>
+      
 
-    <div class="bg-blue-100 p-4 rounded-lg shadow">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-blue-700">
-            Present Day
-          </h2>
-          
-          <p class="text-2xl  text-black">
-            3000 M
-          </p>
+      <!-- Main Content Grid Section -->
+      <div class="p-6">
+        <!-- Grid container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        $3000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Day
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <a href="./components/Dailyreport.html" class="mt-4 bg-blue-800 text-white p-2 rounded-lg text-center block">
+              Tested / Completed
+          </a>
         </div>
-        <i class="fas fa-file-alt text-black text-2xl"></i>
-      </div>
-<div
-  class="mt-4 font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
-  onclick="window.location.href='./components/Dailyreport.html';"
->
-  No.of.Meter Tested
-</div>
-
-<div
-class="mt-4 font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
-onclick="window.location.href='./components/Dailyreport.html';"
->
-        No.of.Meter Completed
-      </div>
-
-      <div class="mt-4 flex justify-center">
-        <i class="fas fa-flag text-orange-500 text-xl"></i> <!-- Report Icon -->
-      </div>
-    </div>
-
-    <!-- Page Views Card -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-blue-700">
-            Present Week
-          </h2>
-          <p class=" text-2xl text-black">
-            18,000 M
-          </p>
-
+        
+        <div class="bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        $18,000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Week
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <a href="./components/Dailyreport.html" class="mt-4 bg-blue-800 text-white p-2 rounded-lg text-center block">
+              Tested / Completed
+          </a>
         </div>
-        <i class="fas fa-file-alt text-black text-2xl"></i>
-      </div>
-      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Dailyreport.html';">
-        No.of.Meter Tested
-      </div>
-      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Dailyreport.html'">
-        No.of.Meter Completed
-      </div>
-      <div class="mt-4 flex justify-center">
-        <i class="fas fa-flag text-green-500 text-xl"></i> <!-- Report Icon -->
-      </div>
-    </div>
-
-    <!-- Task Completed Card -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-blue-700">
-          Present Month
-          </h2>
-          <p class=" text-2xl text-black">
-            540,000 M
-          </p>
+        
+        <div class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        $540,000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Month
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <a href="./components/Monthlyreport.html" class="mt-4 bg-blue-800 text-white p-2 rounded-lg text-center block">
+              Tested / Completed
+          </a>
         </div>
-        <i class="fas fa-file-alt text-black text-2xl"></i>
-      </div>
-      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Monthlyreport.html';">
-        No.of.Meter Tested
-      </div>
-      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Monthlyreport.html'">
-        No.of.Meter Completed
-      </div>
-      <div class="mt-4 flex justify-center">
-        <i class="fas fa-flag text-red-500 text-xl"></i> <!-- Report Icon -->
-      </div>
-    </div>
-
-    <!-- Downloads Card -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold text-blue-700">
-            Present Year
-          </h2>
-          <p class=" text-2xl text-black">
-            6,480,000 M 
-          </p>
+        
+        <div class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        $6,480,000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Year
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <a href="./components/Monthlyreport.html" class="mt-4 bg-blue-800 text-white p-2 rounded-lg text-center block">
+              Tested / Completed
+          </a>
         </div>
-        <i class="fas fa-file-alt text-black text-2xl"></i>
-      </div>
-      <div class="mt-4  font-semibold bg-orange-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Monthlyreport.html';">
-        No.of.Meter Tested
-      </div>
-      <div class="mt-4  font-semibold bg-green-600 text-white p-2 rounded-lg text-center cursor-pointer"
-      onclick="window.location.href='./components/Monthlyreport.html'">
-        No.of.Meter Completed
-      </div>
-      <div class="mt-4 flex justify-center">
-        <i class="fas fa-flag text-teal-500 text-xl"></i> <!-- Report Icon -->
-      </div>
+        
+
+  <!-- Sales Per Day Card -->
+ 
+
+  <!-- Total Revenue Card -->
+
+
+  <div class="bg-white rounded-lg shadow p-6">
+   <h2 class="text-lg font-semibold mb-4">
+    Total Revenue
+   </h2>
+   <div class="flex justify-center mb-4">
+    <img alt="Pie chart showing total revenue distribution" class="w-32 h-32" height="150" src="https://storage.googleapis.com/a1aa/image/9YtWwVXS0EZbAxO4F1WU80FpEQGYh9ehaSilXek63fK1ZDCoA.jpg" width="150"/>
+   </div>
+   <div class="flex justify-center space-x-4 mb-4">
+    <div class="flex items-center space-x-2">
+     <span class="w-3 h-3 bg-red-500 rounded-full">
+     </span>
+     <span class="text-sm">
+      Present Day
+     </span>
     </div>
+    <div class="flex items-center space-x-2">
+     <span class="w-3 h-3 bg-blue-500 rounded-full">
+     </span>
+     <span class="text-sm">
+      Present Week
+     </span>
+    </div>
+    <div class="flex items-center space-x-2">
+     <span class="w-3 h-3 bg-teal-500 rounded-full">
+     </span>
+     <span class="text-sm">
+     Present Month
+     </span>
+    </div>
+   </div>
+   <div class="flex justify-between">
+    <div class="text-center">
+     <p class="text-sm font-semibold">
+      3000
+     </p>
+     <p class="text-blue-500">
+      + 16.85%
+     </p>
+    </div>
+    <div class="text-center">
+     <p class="text-sm font-semibold">
+      18,000
+     </p>
+     <p class="text-green-500">
+      +45.36%
+     </p>
+    </div>
+    <div class="text-center">
+     <p class="text-sm font-semibold">
+      540,000
+     </p>
+     <p class="text-red-500">
+      - 50.69%
+     </p>
+    </div>
+   </div>
   </div>
-
-  <div class="w-full max-w-4xl mt-4">
-    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12">
-      <!-- Performance Section -->
-      <div class="bg-white shadow-md rounded-lg p-6 flex-1">
-        <div class="flex justify-between items-center mb-4">
-          <h2 class="text-xl font-semibold">Performance</h2>
-          <div class="flex space-x-2">
-            <button class="px-3 py-1 bg-gray-200 rounded">ALL</button>
-            <button class="px-3 py-1 bg-gray-200 rounded">1w</button>
-            <button class="px-3 py-1 bg-gray-200 rounded">6M</button>
-            <button class="px-3 py-1 bg-gray-200 rounded">1Y</button>
-          </div>
-        </div>
-        <canvas id="performanceChart"></canvas>
-        <div class="flex justify-center mt-4 space-x-4">
-          <div class="flex items-center space-x-2">
-            <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
-            <span>Page Views</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-            <span>Clicks</span>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Meter's Details Section -->
-      <div class="bg-white rounded-lg shadow-lg p-6 flex-1">
-        <h2 class="text-lg font-semibold text-gray-800 mb-4">Meter's Details</h2>
-        <div class="flex justify-center mb-4">
-          <img alt="Circular chart showing 65.2% returning customers" class="w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/nwecLneXt9tN9EELC8JlgFLpcBe1d2rBxh98ekQXsCDsRDAQB.jpg" width="100"/>
-        </div>
-        <div class="text-center mb-4">
-          <p class="text-2xl font-semibold text-gray-800">65.2%</p>
-          <p class="text-sm text-gray-600">Returning Meter's</p>
-        </div>
-        <div class="flex justify-between mb-4">
-          <div class="text-center">
-            <p class="text-sm text-gray-600">Last Week</p>
-            <p class="text-xl font-semibold text-gray-800">540,000 M</p>
-          </div>
-          <div class="text-center">
-            <p class="text-sm text-gray-600">Present Week</p>
-            <p class="text-xl font-semibold text-gray-800">403,000 M</p>
-          </div>
-        </div>
-        <div class="flex justify-center mb-4">
-          <button class="bg-gray-100 text-gray-800 py-2 px-4 rounded-lg">View Details</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-
  </div>
-</div>
-</div>
+ <!-- Realty and Infra Section -->
+ <div class="mt-6 grid grid-cols-2 gap-6">
+  <div class="bg-white rounded-lg shadow p-4 flex justify-between items-center">
+   <p class="text-gray-500">
+    REALTY
+   </p>
+   <p class="text-red-500">
+    -0.99
+   </p>
+  </div>
+  <div class="bg-white rounded-lg shadow p-4 flex justify-between items-center">
+   <p class="text-gray-500">
+    INFRA
+   </p>
+   <p class="text-green-500">
+    +7.66
+   </p>
+  </div>
+ </div>
 
-   
-
-</div>
-</div>
 
 
 
 
-<!------- Main Content Page------->
 
-      
-
-
-
-
- 
-
+<div class="w-full max-w-4xl mt-4">
+  <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12">
+    <!-- Performance Section -->
+    <div class="bg-white shadow-md rounded-lg p-6 flex-1">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Performance</h2>
+        <div class="flex space-x-2">
+          <button class="px-3 py-1 bg-gray-200 rounded">ALL</button>
+          <button class="px-3 py-1 bg-gray-200 rounded">1w</button>
+          <button class="px-3 py-1 bg-gray-200 rounded">6M</button>
+          <button class="px-3 py-1 bg-gray-200 rounded">1Y</button>
+        </div>
+      </div>
+      <canvas id="performanceChart"></canvas>
+      <div class="flex justify-center mt-4 space-x-4">
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
+          <span>Page Views</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+          <span>Clicks</span>
+        </div>
+      </div>
+    </div>
     
-<!------- END  Main Content Page------->    
 
 
 
-<!----Wireframe.js----->
-<script src="chart.js"></script>
+      </div>
 
-<script src="Wireframe.js"></script>
-<!-- base:js -->
-<script src="./vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page-->
-<script src="./vendors/chart.js/Chart.min.js"></script>
-<!-- End plugin js for this page-->
-<!-- inject:js -->
-<script src="./js/off-canvas.js"></script>
-<script src="./js/hoverable-collapse.js"></script>
-<script src="./js/template.js"></script>
-<!-- endinject -->
-<!-- plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- Custom js for this page-->
- <script src="script.js"></script>
-<script src="./js/dashboard.js"></script>
-<!-- End custom js for this page-->
+      <!-- Main Content End -->
 
-</div>
-</div>
-  </body>
-  </html>
+    </div>
+  </div>
+
+  
+
+  <!-- Scripts -->
+  <script src="chart.js"></script>
+  <script src="Wireframe.js"></script>
+  <script src="./vendors/js/vendor.bundle.base.js"></script>
+  <script src="./vendors/chart.js/Chart.min.js"></script>
+  <script src="./js/off-canvas.js"></script>
+  <script src="./js/hoverable-collapse.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="script.js"></script>
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>
