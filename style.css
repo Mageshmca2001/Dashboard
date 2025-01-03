@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+  }
+  
+  .sidebar-category .badge {
+    display: none; /* Initially hidden */
+    background-color: #17a2b8;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
