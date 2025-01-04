@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> BGT-Dashboard </title>
+  <!-- base:css -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/lg.png" />
+</head>
+<body>
+
+  <div class="container-scroller d-flex">
+    <!-- partial:./partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <!-- Logo Section -->
+
+      <div class="sidebar-header">
+        <img src="./images/logo.png" alt="Logo" class="sidebar-logo">
+
+      </div>
+      
+    
+    
+      <ul class="nav">
+        
+        <li class="nav-item sidebar-category">
+          <p>User Dashboard</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index2.html">
+            <i class="bx bxs-dashboard menu-icon"></i>
+            <span class="menu-title text-base font-semibold">Dashboard</span>
+            
+          </a>
+        </li>
+
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            
+            <span class="menu-title text-base font-semibold">Reports</span>
+            <div class="badge badge-info badge-pill">3</div>
+          </a>
+        </li>
+         
+      
+        
+        <li class="nav-item">
+          <a class="nav-link" href="./components/Dailyreport.html">
+            <i class="fa fa-file menu-icon"></i>
+            <span class="menu-title">Daily Reports</span>
+          
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./components/Monthlyreport.html">
+            <i class="fa fa-file menu-icon"></i>
+            <span class="menu-title">Monthly Reports</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./components/Meterreport.html">
+            <i class="fa fa-cogs menu-icon"></i>
+            <span class="menu-title">Meter Reports</span>
+          </a>
+        </li>
+        <li class="nav-item sidebar-category">
+          <p>Configuration</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./components/user.html">
+            <i class="fa fa-file menu-icon"></i>
+            <span class="menu-title text-base font-semibold">User Details</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+
+
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:./partials/_navbar.html -->
+    
+      <!-- Fixed Navbar -->
+      <div class="relative h-[10vh] bg-blue-800 bg-center">
+        <div class="relative w-full h-full">
+  <!-- Centered Welcome Message -->
+  <div class="absolute inset-0 flex justify-center items-center">
+    <h1 class="text-white text-2xl font-semibold">Welcome to BGT Dashboard</h1>
+  </div>
+
+  <!-- Logout Button -->
+ 
+  
+</div>
+
+      
+        <!-- Navbar within the same container -->
+        <nav class="navbar fixed top-0 right-50 w-full z-50">
+          <div class="navbar-menu-wrapper flex items-center justify-start">
+            <button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu text-white"></span>
+            </button>
+          </div>
+      
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center bg-blue-500 text-white mt-2 px-2 py-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </nav>
+      </div>
+      
+
+      <!-- Main Content Grid Section -->
+      <div class="p-6">
+        <!-- Grid container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        3000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Day
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+
+            <div class="mt-4 flex justify-center space-x-4">
+              <div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+                Tested : 3000
+              </div>
+              
+              <div class="bg-green-800 text-white p-2 rounded-lg text-center">
+                Completed :500
+              </div>
+            </div>
+            
+        
+            <!-- New section for "Key" and "Value" boxes -->
+           
+        </div>
+        
+        
+        <div class="bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        24,500
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Week
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <div class="mt-4 flex justify-center space-x-4">
+              <div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+                Tested : 20,000
+              </div>
+              
+              <div class="bg-green-800 text-white p-2 rounded-lg text-center">
+                Completed :4,500
+              </div>
+            </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        540,000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Month
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <div class="mt-4 flex justify-center space-x-4">
+              <div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+                Tested : 400,000
+              </div>
+              
+              <div class="bg-green-800 text-white p-2 rounded-lg text-center">
+                Completed :100,000
+              </div>
+            </div>
+
+        </div>
+        
+        <div class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-6 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-semibold text-white">
+                        6,480,000
+                    </h2>
+                    <p class="text-2xl font-semibold text-gray-200">
+                        Present Year
+                    </p>
+                </div>
+                <!-- Changed to red report icon -->
+                <i class="fas fa-file-alt text-red-500 text-3xl"></i>
+            </div>
+            <br>
+            <div class="mt-4 flex justify-center space-x-4">
+              <div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+                Tested : 5,00,000
+              </div>
+              
+              <div class="bg-green-800 text-white p-2 rounded-lg text-center">
+                Completed :1,00,000
+              </div>
+            </div>
+
+        </div>
+        
+
+  <!-- Sales Per Day Card -->
+ 
+
+  <!-- Total Revenue Card -->
+
+
+  <div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-lg font-semibold mb-4">Total Meter's</h2>
+    <div class="flex justify-center mb-4">
+      <canvas id="pieChart" class="w-full h-48 max-w-xs"></canvas>
+    </div>
+    <div class="flex justify-center space-x-4 mb-4">
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+        <span class="text-sm">Present Day</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+        <span class="text-sm">Present Week</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 bg-teal-500 rounded-full"></span>
+        <span class="text-sm">Present Month</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <div class="text-center">
+        <p class="text-sm font-semibold">3,000</p>
+        <p class="text-blue-500">+ 16.85%</p>
+      </div>
+      <div class="text-center">
+        <p class="text-sm font-semibold">18,000</p>
+        <p class="text-green-500">+45.36%</p>
+      </div>
+      <div class="text-center">
+        <p class="text-sm font-semibold">540,000</p>
+        <p class="text-red-500">- 50.69%</p>
+      </div>
+    </div>
+  </div>
+  
+
+  
+ 
+ <!-- Realty and Infra Section -->
+ 
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <!-- Main Content End -->
+
+    </div>
+  </div>
+
+  
+
+  <!-- Scripts -->
+   <script src="index.js"></script>
+  <script src="chart.js"></script>
+  <script src="Wireframe.js"></script>
+  <script src="./vendors/js/vendor.bundle.base.js"></script>
+  <script src="./vendors/chart.js/Chart.min.js"></script>
+  <script src="./js/off-canvas.js"></script>
+  <script src="./js/hoverable-collapse.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="script.js"></script>
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>

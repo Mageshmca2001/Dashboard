@@ -1,0 +1,137 @@
+/* Apply background image to the whole page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/city.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Container for the login form */
+  .login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* The form box itself */
+  .login-form-container {
+    background-color: rgba(29, 78, 216, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Logo container */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* Form input styling */
+  .input-container {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px 20px 12px 35px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .input-field::placeholder {
+    color: white;
+  }
+  
+  .input-field:focus {
+    border-color: white;
+  }
+  
+  /* Remember me section */
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox {
+    height: 16px;
+    width: 16px;
+    accent-color: #6b21a8;
+  }
+  
+  .remember-text {
+    margin-left: 8px;
+    color: white;
+  }
+  
+  /* Button styling */
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #e2e8f0;
+  }
+  
+  /* Forgot password link */
+  .forgot-password {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .forgot-password-link {
+    color: white;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  
