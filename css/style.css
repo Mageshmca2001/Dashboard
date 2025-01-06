@@ -20682,6 +20682,7 @@ width: auto;
 
 .navbar .navbar-menu-wrapper .navbar-toggler {
   border: 0;
+  
   color: inherit;
   font-size: 1.5rem;
   padding: 0;
@@ -21124,14 +21125,17 @@ width: auto;
 }
 
 .sidebar-logo {
-  max-width: 50%;              /* Ensure the logo fits well */
-  max-height: 50%;             /* Maintain logo's aspect ratio */
+  align-items: center;    
+  justify-content: center;
+  max-width: 70%;               /* Ensure the logo fits well */
+  max-height: 70%;              /* Maintain logo's aspect ratio */
+  border-radius: 70%;           /* Make the logo circular */
 }
-
 
 .sidebar.closed .sidebar-title {
-    display: none;
+  display: none;
 }
+
 
 
 /* Optional: Adjust position for smaller screens */
