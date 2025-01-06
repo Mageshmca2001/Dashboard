@@ -153,31 +153,93 @@ function getRandomDateTime() {
 }
 
 // Generate an array of random dates and times for the labels
-const randomLabels = Array.from({ length: 5 }, getRandomDateTime);
 
-const barChart = new Chart(ctx, {
-  type: 'bar', // Bar chart type
-  data: {
-    labels: randomLabels, // Random days and times as labels
-    datasets: [{
-      label: 'Meter Details',
-      data: [12, 19, 3, 5, 2], // Data for the bar chart
-      backgroundColor: 'rgba(54, 162, 235, 0.2)', // Bar color
-      borderColor: 'rgba(54, 162, 235, 1)', // Border color
-      borderWidth: 1
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true // Y-axis starts from 0
-      }
-    }
-  }
-});
 
 
 
 // Ensure the data-label is added when the page is loaded or resized
 
+function createGroupedBarChart() {
+    const ctx = document.getElementById('barChart').getContext('2d');
+    const data = {
+      labels: ['Progress'], // Label for the group
+      datasets: [
+        {
+          label: 'Tested (Set 1)',
+          data: [40], // Value for "Tested" in Set 1
+          backgroundColor: 'red',
+          borderColor: 'darkred',
+          borderWidth: 1,
+          barThickness: 20,
+        },
+        {
+          label: 'Completed (Set 1)',
+          data: [30], // Value for "Completed" in Set 1
+          backgroundColor: 'green',
+          borderColor: 'darkgreen',
+          borderWidth: 1,
+          barThickness: 20,
+        },
+        {
+          label: 'Reworked (Set 1)',
+          data: [20], // Value for "Reworked" in Set 1
+          backgroundColor: 'orange',
+          borderColor: 'darkorange',
+          borderWidth: 1,
+          barThickness: 20,
+        },
+        {
+          label: 'Tested (Set 2)',
+          data: [50], // Value for "Tested" in Set 2
+          backgroundColor: 'darkred',
+          borderColor: 'red',
+          borderWidth: 1,
+          barThickness: 20,
+        },
+        {
+          label: 'Completed (Set 2)',
+          data: [35], // Value for "Completed" in Set 2
+          backgroundColor: 'darkgreen',
+          borderColor: 'green',
+          borderWidth: 1,
+          barThickness: 20,
+        },
+        {
+          label: 'Reworked (Set 2)',
+          data: [25], // Value for "Reworked" in Set 2
+          backgroundColor: 'darkorange',
+          borderColor: 'orange',
+          borderWidth: 1,
+          barThickness: 20,
+        }
+      ]
+    };
+
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          stacked: false, // Group the bars together
+          barPercentage: 0.8, // Adjust the width of bars
+          categoryPercentage: 0.5, // Adjust the space between groups
+          offset: true, // Add offset for each group to create space
+        },
+        y: {
+          beginAtZero: true,
+        }
+      }
+    };
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+  }

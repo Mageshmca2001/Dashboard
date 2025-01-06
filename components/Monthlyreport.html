@@ -663,9 +663,63 @@
                                                                       </div>
                                                                       <canvas id="barChart" class="mt-4 transition-all"></canvas>
                                                                     </div>
-                                                                  </div>
-                                                            
-
+                                                                    
+                                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                                                    <script>
+                                                                      window.onload = function() {
+                                                                        var ctx = document.getElementById('barChart').getContext('2d');
+                                                                        
+                                                                        var barChart = new Chart(ctx, {
+                                                                          type: 'bar',
+                                                                          data: {
+                                                                            labels: ['10.11.2024', '11.11.2024', '12.11.2024', '13.11.2024'], // Time periods or categories for x-axis
+                                                                            datasets: [
+                                                                              {
+                                                                                label: 'Tested',
+                                                                                data: [30, 50, 70, 80], // Data for "Tested" over multiple weeks
+                                                                                backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color for Tested
+                                                                                borderColor: 'rgba(54, 162, 235, 1)',
+                                                                                borderWidth: 1
+                                                                              },
+                                                                              {
+                                                                                label: 'Completed',
+                                                                                data: [20, 40, 60, 80], // Data for "Completed" over multiple weeks
+                                                                                backgroundColor: 'rgba(75, 192, 192, 0.5)', // Green color for Completed
+                                                                                borderColor: 'rgba(75, 192, 192, 1)',
+                                                                                borderWidth: 1
+                                                                              },
+                                                                              {
+                                                                                label: 'Reworked',
+                                                                                data: [10, 30, 50, 70], // Data for "Reworked" over multiple weeks
+                                                                                backgroundColor: 'rgba(255, 159, 64, 0.5)', // Orange color for Reworked
+                                                                                borderColor: 'rgba(255, 159, 64, 1)',
+                                                                                borderWidth: 1
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          options: {
+                                                                            responsive: true,
+                                                                            scales: {
+                                                                              y: {
+                                                                                beginAtZero: true
+                                                                              },
+                                                                              x: {
+                                                                                // Make sure each label has space for the grouped bars
+                                                                                grid: {
+                                                                                  offset: true
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            plugins: {
+                                                                              legend: {
+                                                                                position: 'top'
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        });
+                                                                      };
+                                                                    </script>
+                                                                    
 
 
 

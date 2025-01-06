@@ -1,6 +1,17 @@
 // Sample users array to manage the user data
 let users = [
     { id: 1, name: "B.Magesh", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 2, name: "U.Kamalesh waran", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 3, name: "M.Balaji", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 4, name: "J.jackson", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 5, name: "I.Monisha", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 6, name: "S.karsini", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 7, name: "P.R.Balaji", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 8, name: "M.Mithun", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 9, name: "M.bala", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 10, name: "U.kamalesh", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 11, name: "K.kamal raj", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
+    { id: 12, name: "S.John", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" }
   ];
   
   // Function to render the user table

@@ -933,8 +933,81 @@
           </div>
           <canvas id="barChart" class="mt-4 transition-all"></canvas>
         </div>
-      </div>
-
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          window.onload = function() {
+            var ctx = document.getElementById('barChart').getContext('2d');
+            
+            // Example API (replace with your actual API endpoint)
+            const apiUrl = 'https://jsonplaceholder.typicode.com/todos'; // Mock data API endpoint
+        
+            // Fetch data from the API
+            fetch(apiUrl)
+              .then(response => response.json()) // Parse the JSON data from the API
+              .then(data => {
+                // For this demo, simulate the API returning the chart data structure
+                const chartData = {
+                  labels: ["10.11.2024", "11.11.2024", "12.11.2024", "13.11.2024"],
+                  tested: [30, 50, 70, 90],
+                  completed: [20, 40, 60, 80],
+                  reworked: [10, 30, 50, 70]
+                };
+                
+                // Create the chart with dynamic data
+                var barChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: chartData.labels, // Dynamically set labels from the API
+                    datasets: [
+                      {
+                        label: 'Tested',
+                        data: chartData.tested, // Dynamically set 'Tested' dataset
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                      },
+                      {
+                        label: 'Completed',
+                        data: chartData.completed, // Dynamically set 'Completed' dataset
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                      },
+                      {
+                        label: 'Reworked',
+                        data: chartData.reworked, // Dynamically set 'Reworked' dataset
+                        backgroundColor: 'rgba(255, 159, 64, 0.7)', // Increased opacity for better visibility
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1
+                      }
+                    ]
+                  },
+                  options: {
+                    responsive: true,
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      },
+                      x: {
+                        grid: {
+                          offset: true
+                        }
+                      }
+                    },
+                    plugins: {
+                      legend: {
+                        position: 'top'
+                      }
+                    }
+                  }
+                });
+              })
+              .catch(error => console.error('Error fetching data:', error)); // Handle errors if the API request fails
+          };
+        </script>
+        
+        
 
 
              

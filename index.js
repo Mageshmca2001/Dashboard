@@ -5,7 +5,7 @@ const ctx = document.getElementById('pieChart').getContext('2d');
         labels: ['Present Day', 'Present Week', 'Present Month'],
         datasets: [
           {
-            data: [3000, 18000, 540000],
+            data: [35000, 245000, 540000],
             backgroundColor: ['#EF4444', '#3B82F6', '#14B8A6'],
             hoverBackgroundColor: ['#F87171', '#60A5FA', '#2DD4BF'],
           },
