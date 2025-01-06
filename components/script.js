@@ -1,13 +1,13 @@
 
 
-function showTable() {
-var table = document.getElementById("dataTable",);
-if (table.style.display === "none") {
-table.style.display = "table";
-} else {
-table.style.display = "none";
-}
-} 
+// function showTable() {
+// var table = document.getElementById("dataTable",);
+// if (table.style.display === "none") {
+// table.style.display = "table";
+// } else {
+// table.style.display = "none";
+// }
+// } 
 
 function updateEntries() {
 // Get the selected value from the dropdown
@@ -204,44 +204,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
 // Get the necessary elements
-const entriesSelect = document.getElementById('entries');
-const dataTable = document.getElementById('dataTable');
-const tableBody = dataTable.getElementsByTagName('tbody')[0];
-const rows = tableBody.getElementsByTagName('tr');
-
-// Show table once JavaScript is loaded
-dataTable.style.display = 'table';
-
-// Function to show selected number of entries
-function showEntries() {
-    const selectedValue = entriesSelect.value;
-    const totalRows = rows.length;
-    
-    // Show all rows if "All" is selected
-    if (selectedValue === 'All') {
-        for (let i = 0; i < totalRows; i++) {
-            rows[i].style.display = '';
-        }
-        return;
-    }
-    
-    // Convert selected value to number
-    const numEntries = parseInt(selectedValue);
-    
-    // Show/hide rows based on selection
-    for (let i = 0; i < totalRows; i++) {
-        if (i < numEntries) {
-            rows[i].style.display = '';
-        } else {
-            rows[i].style.display = 'none';
-        }
+// Function to show table when Generate button is clicked
+function showTable() {
+    const table = document.getElementById('dataTable');
+    if (table) {
+        table.style.display = 'table';
+        initializeTable(); // Initialize table functionalities after showing it
     }
 }
 
-// Add event listener to select element
-entriesSelect.addEventListener('change', showEntries);
+// Function to initialize table functionalities
+function initializeTable() {
+    const entriesSelect = document.getElementById('entries');
+    const table = document.getElementById('dataTable');
+    const tbody = table.getElementsByTagName('tbody')[0];
+    const allRows = Array.from(tbody.getElementsByTagName('tr'));
+    
+    // Function to update table based on selected entries
+    function updateTableDisplay() {
+        const selectedValue = entriesSelect.value;
+        const numEntries = selectedValue === 'All' ? allRows.length : parseInt(selectedValue);
+        
+        // Hide all rows first
+        allRows.forEach(row => row.style.display = 'none');
+        
+        // Show only the selected number of rows
+        for (let i = 0; i < Math.min(numEntries, allRows.length); i++) {
+            allRows[i].style.display = 'table-row';
+        }
+        
+        // Update pagination info
+        updatePaginationInfo(numEntries, allRows.length);
+    }
+    
+    // Function to update pagination information
+    function updatePaginationInfo(showing, total) {
+        const paginationInfo = document.getElementById('pagination-info');
+        if (paginationInfo) {
+            paginationInfo.textContent = `Showing ${Math.min(showing, total)} of ${total} entries`;
+        }
+    }
+    
+    // Add event listener for entries select
+    entriesSelect.addEventListener('change', updateTableDisplay);
+    
+    // Initial display update
+    updateTableDisplay();
+}
 
-// Initialize table with default selection
-showEntries();
+// Initialize event listener for generate button
+document.addEventListener('DOMContentLoaded', function() {
+    const generateButton = document.querySelector('button[onclick="showTable()"]');
+    if (generateButton) {
+        generateButton.onclick = showTable;
+    }
+});
