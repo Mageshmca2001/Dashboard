@@ -20351,104 +20351,6 @@ dl li {
 }
 
 /* === Landing screens === */
-/* Auth */
-.auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
-  background-size: cover;
-}
-
-.auth .register-half-bg {
-  background: url("../images/auth/register-bg.jpg");
-  background-size: cover;
-}
-
-.auth.lock-full-bg {
-  background: url("../images/auth/lockscreen-bg.jpg");
-  background-size: cover;
-}
-
-.auth .lock-profile-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 100%;
-}
-
-.auth .auth-form-light {
-  background: #ffffff;
-}
-
-.auth .auth-form-light select {
-  color: #c9c8c8;
-}
-
-.auth .auth-form-light .input-group .form-control:focus, .auth .auth-form-light .input-group .form-control:active {
-  border-color: #f3f3f3;
-}
-
-.auth .auth-form-transparent {
-  background: transparent;
-}
-
-.auth .auth-form-transparent .form-control,
-.auth .auth-form-transparent .input-group-text {
-  border-color: #a3a4a5;
-}
-
-.auth .auth-form-transparent .form-control:focus, .auth .auth-form-transparent .form-control:active,
-.auth .auth-form-transparent .input-group-text:focus,
-.auth .auth-form-transparent .input-group-text:active {
-  border-color: #a3a4a5;
-}
-
-.auth .auth-form-transparent select {
-  outline-color: #a3a4a5;
-}
-
-.auth.auth-img-bg {
-  padding: 0;
-}
-
-@media (min-width: 768px) {
-  .auth.auth-img-bg .auth-form-transparent {
-    width: 55%;
-    margin: auto;
-  }
-}
-
-.auth .brand-logo {
-  margin-bottom: 2rem;
-}
-
-.auth .brand-logo img {
-  width: 150px;
-}
-
-.auth form .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.auth form .form-group label {
-  font-size: .8125rem;
-}
-
-.auth form .form-group .form-control {
-  background: transparent;
-  border-radius: 0;
-  font-size: .9375rem;
-}
-
-.auth form .auth-form-btn {
-  height: 50px;
-  line-height: 1.5;
-}
-
-.auth form .auth-link {
-  font-size: 0.875rem;
-}
-
-.auth form .auth-link:hover {
-  color: initial;
-}
 
 .page-body-wrapper {
   min-height: 100vh;
@@ -20514,11 +20416,13 @@ dl li {
 
 /* Sidebar */
 .sidebar {
+
   min-height: calc(100vh - 65px);
-  background: #223e9c;
+  background: #8a00c2;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   padding: 0;
+
   z-index: 11;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -20528,6 +20432,7 @@ dl li {
 }
 
 .sidebar .nav {
+  position: fixed;
   overflow: hidden;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -20635,7 +20540,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #183188;
+  background: #4c00b0;
   position: relative;
 }
 
@@ -20658,7 +20563,7 @@ dl li {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
-  background: #183188;
+  background: #4c00b0;
   color: #ffffff;
 }
 
@@ -20694,11 +20599,11 @@ dl li {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-  color: #93a8ff;
+  color: #4c00b0;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
-  color: #93a8ff;
+  color: #4c00b0;
   background: transparent;
 }
 
@@ -20829,22 +20734,22 @@ width: auto;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-webkit-input-placeholder {
-  color: #001737;
+  color: #4c00b0;
   font-weight: 600;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-moz-placeholder {
-  color: #001737;
+  color: #4c00b0;
   font-weight: 600;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-moz-placeholder {
-  color: #001737;
+  color: #4c00b0;
   font-weight: 600;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-ms-input-placeholder {
-  color: #001737;
+  color: #4c00b0;
   font-weight: 600;
 }
 
@@ -20953,7 +20858,7 @@ width: auto;
 }
 
 .navbar .navbar-menu-wrapper.navbar-search-wrapper .navbar-nav.navbar-nav-right .nav-item.nav-profile {
-  color: #001737;
+  color: #4c00b0;
 }
 
 .navbar .navbar-menu-wrapper.navbar-search-wrapper .navbar-nav.navbar-nav-right .nav-item.nav-profile .nav-link img {
@@ -21098,7 +21003,7 @@ width: auto;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    background: #223e9c;
+    background: #4c00b0;
     padding: 0.5rem 1.4rem;
     left: 70px;
     position: absolute;
@@ -21114,13 +21019,13 @@ width: auto;
     display: none;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
-    background: #223e9c;
+    background: #4c00b0;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse,
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
     display: block;
     padding: .5rem 0;
-    background: #223e9c;
+    background: #4c00b0;
     border-radius: 0 0 5px 0;
     position: absolute;
     left: 70px;
@@ -21211,7 +21116,7 @@ width: auto;
   height: 100px;                /* Adjust the height if needed */
 }
 
-sidebar-text {
+.sidebar-text {
   display: flex;                /* Use flexbox */
   justify-content: center;      /* Horizontally center */
   align-items: center;          /* Vertically center */
@@ -21228,18 +21133,6 @@ sidebar-text {
     display: none;
 }
 
-
-/* Mobile-first approach (default styling) */
-.logout-btn {
-  @apply px-4 py-2 text-sm;  /* Button padding and text size for small screens */
-}
-
-/* For larger screens (e.g., tablets, desktops) */
-@media (min-width: 768px) {
-  .logout-btn {
-    @apply px-6 py-3 text-base;  /* Larger button padding and text for bigger screens */
-  }
-}
 
 /* Optional: Adjust position for smaller screens */
 @media (max-width: 768px) {
