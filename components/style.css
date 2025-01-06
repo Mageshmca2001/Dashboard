@@ -22,3 +22,37 @@ overflow-x: auto;
 text-align: center;
 }
 }
+
+.pagination-numbers {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.page-number {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+.page-number.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-number:hover:not(.active) {
+    background: #f0f0f0;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-top: 1rem;
+}
+.chart-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}

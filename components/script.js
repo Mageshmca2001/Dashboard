@@ -115,55 +115,133 @@ XLSX.writeFile(wb, filename);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-const rowsPerPage = 10; 
-let currentPage = 1; 
-const table = document.getElementById('dataTable');
-const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-const totalRows = rows.length;
-const totalPages = Math.ceil(totalRows / rowsPerPage);
+    const rowsPerPage = 10;
+    let currentPage = 1;
+    const table = document.getElementById('dataTable');
+    const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    const totalRows = rows.length;
+    const totalPages = Math.ceil(totalRows / rowsPerPage);
 
-function displayRows() {
+    // Create page numbers container
+    const paginationContainer = document.createElement('div');
+    paginationContainer.className = 'pagination-numbers';
+    document.getElementById('prev-btn').parentNode.insertBefore(
+        paginationContainer,
+        document.getElementById('next-btn')
+    );
 
-for (let i = 0; i < totalRows; i++) {
-rows[i].style.display = 'none';
-}
+    // Function to create page number buttons
+    function createPageNumbers() {
+        paginationContainer.innerHTML = '';
+        for (let i = 1; i <= 6; i++) {
+            if (i <= totalPages) {
+                const pageBtn = document.createElement('button');
+                pageBtn.innerText = i;
+                pageBtn.className = 'page-number';
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                pageBtn.addEventListener('click', function() {
+                    currentPage = i;
+                    displayRows();
+                    updatePageNumbers();
+                });
+                paginationContainer.appendChild(pageBtn);
+            }
+        }
+    }
 
+    function updatePageNumbers() {
+        const pageButtons = document.getElementsByClassName('page-number');
+        for (let button of pageButtons) {
+            button.classList.remove('active');
+            if (parseInt(button.innerText) === currentPage) {
+                button.classList.add('active');
+            }
+        }
+    }
 
-const start = (currentPage - 1) * rowsPerPage;
-const end = start + rowsPerPage;
+    function displayRows() {
+        for (let i = 0; i < totalRows; i++) {
+            rows[i].style.display = 'none';
+        }
 
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
 
-for (let i = start; i < end && i < totalRows; i++) {
-rows[i].style.display = '';
-}
+        for (let i = start; i < end && i < totalRows; i++) {
+            rows[i].style.display = '';
+        }
 
+        document.getElementById('pagination-info').innerText = 
+            `Showing ${start + 1} to ${Math.min(end, totalRows)} of ${totalRows} entries`;
 
-document.getElementById('pagination-info').innerText = `Showing ${start + 1} to ${Math.min(end, totalRows)} entries`;
+        document.getElementById('prev-btn').disabled = currentPage === 1;
+        document.getElementById('next-btn').disabled = currentPage === totalPages;
+    }
 
+    document.getElementById('prev-btn').addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayRows();
+            updatePageNumbers();
+        }
+    });
 
-document.getElementById('prev-btn').disabled = currentPage === 1;
-document.getElementById('next-btn').disabled = currentPage === totalPages;
-}
+    document.getElementById('next-btn').addEventListener('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayRows();
+            updatePageNumbers();
+        }
+    });
 
-
-document.getElementById('prev-btn').addEventListener('click', function() {
-if (currentPage > 1) {
-currentPage--;
-displayRows();
-}
+    // Initial setup
+    createPageNumbers();
+    displayRows();
 });
 
-document.getElementById('next-btn').addEventListener('click', function() {
-if (currentPage < totalPages) {
-currentPage++;
-displayRows();
+
+
+
+
+// Get the necessary elements
+const entriesSelect = document.getElementById('entries');
+const dataTable = document.getElementById('dataTable');
+const tableBody = dataTable.getElementsByTagName('tbody')[0];
+const rows = tableBody.getElementsByTagName('tr');
+
+// Show table once JavaScript is loaded
+dataTable.style.display = 'table';
+
+// Function to show selected number of entries
+function showEntries() {
+    const selectedValue = entriesSelect.value;
+    const totalRows = rows.length;
+    
+    // Show all rows if "All" is selected
+    if (selectedValue === 'All') {
+        for (let i = 0; i < totalRows; i++) {
+            rows[i].style.display = '';
+        }
+        return;
+    }
+    
+    // Convert selected value to number
+    const numEntries = parseInt(selectedValue);
+    
+    // Show/hide rows based on selection
+    for (let i = 0; i < totalRows; i++) {
+        if (i < numEntries) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
 }
-});
 
+// Add event listener to select element
+entriesSelect.addEventListener('change', showEntries);
 
-displayRows();
-});
-
-
-
-
+// Initialize table with default selection
+showEntries();

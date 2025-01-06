@@ -106,7 +106,7 @@
 <!-- Navbar within the same container -->
 <nav class="navbar fixed top-0 right-50 w-full z-50">
 <div class="navbar-menu-wrapper flex items-center justify-start">
-<button class="navbar-toggler navbar-toggler align-self-center bg-blue-500 text-white px-2 py-2 mt-2 rounded-lg hover:bg-gray-700" type="button" data-toggle="minimize">
+<button class="navbar-toggler navbar-toggler align-self-center bg-Purple text-white px-2 py-2 mt-2 rounded-lg hover:bg-purple-500" type="button" data-toggle="minimize">
 <span class="mdi mdi-menu text-white"></span>
 </button>
 </div>
@@ -152,6 +152,7 @@ DAILY REPORTS
 <div class="bg-gray-200 p-4 rounded-b shadow-md">
 <div class="flex flex-col md:flex-row items-center justify-between mb-4 space-y-4 md:space-y-0">
 <div class="flex items-center space-x-4">
+  
 <label for="entries" class="block text-gray-700">Show</label>
 <select id="entries" class="border border-gray-300 rounded p-2 transition-all">
 <option value="10">10</option>
@@ -585,21 +586,21 @@ DAILY REPORTS
 
 </tr> 
 <tr>
-  <td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
-  <td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
-  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
-  <td class= "border border-gray-300 text-center px-4 py-2">500</td>
+<td class= "border border-gray-300 text-center px-4 py-2"> 10:00</td>
+<td class= "border border-gray-300 text-center px-4  py-2">3,500</td>
+<td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+<td class= "border border-gray-300 text-center px-4 py-2">500</td>
 
-  </tr>
-  
-  <tr>
-  <td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
-  <td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
-  <td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
-  <td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+</tr>
 
-  </tr>
-  
+<tr>
+<td class= "border border-gray-300 text-center px-4 py-2"> 12:00</td>
+<td class= "border border-gray-300 text-center px-4  py-2">4,500</td>
+<td class= "border border-gray-300 text-center px-4 py-2">2,500</td>
+<td class= "border border-gray-300 text-center px-4 py-2">1000</td>
+
+</tr>
+
 <tr>
 <td class= "border border-gray-300 text-center px-4 py-2"> 14:00 </td>
 <td class= "border border-gray-300 text-center px-4  py-2">7,000</td>
@@ -891,68 +892,95 @@ DAILY REPORTS
 
 <!-- Pagination Section -->
 <div class="flex flex-col md:flex-row justify-between items-center mt-4 space-y-4 md:space-y-0">
-<div>
-<span id="pagination-info" class="pagination-info">Showing 1 to 10 of 57 entries</span>
+  <div>
+      <span id="pagination-info" class="text-sm text-gray-700"></span>
+  </div>
+  <div class="flex items-center space-x-2">
+      <button id="prev-btn" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed">
+          Previous
+      </button>
+      <div id="page-numbers" class="flex space-x-1">
+          <!-- Page numbers will be dynamically inserted here -->
+      </div>
+      <button id="next-btn" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed">
+          Next
+      </button>
+  </div>
 </div>
-<div class="flex space-x-1 pagination">
-<button id="prev-btn" class="px-3 py-1 border border-gray-300 rounded bg-white hover:bg-gray-200 transition-all" data-action="prev" disabled>Previous</button>
-<button id="next-btn" class="px-3 py-1 border border-gray-300 rounded bg-white hover:bg-gray-200 transition-all" data-action="next">Next</button>
 </div>
-</div>
+
+
+
+
 </div>
 
 <!-- Charts Section -->
 <div class="max-w-7xl mx-auto p-4">
-<div class="flex justify-between items-center bg-gray-300 shadow-md p-4 rounded-lg transition-all">
+<div class="flex justify-between items-center bg-gray-300 shadow-md p-4 rounded-lg">
 <h1 class="text-2xl text-black">Charts</h1>
 </div>
-<canvas id="barChart" class="mt-4 transition-all"></canvas>
+<div class="chart-wrapper">
+<div class="chart-container">
+<canvas id="barChart"></canvas>
+</div>
+</div>
 </div>
 
 <script src="./script/chart.js"></script>
+
 <script>
 window.onload = function() {
-var ctx = document.getElementById('barChart').getContext('2d');
+// Create wrapper div for the chart with scrolling
+const wrapper = document.createElement('div');
+wrapper.style.cssText = 'width: 100%; overflow-x: auto; position: relative;';
+
+// Create canvas with fixed width to enable scrolling
+const canvas = document.getElementById('barChart');
+canvas.style.cssText = 'min-width: 1500px;'; // Adjust this value based on your needs
+
+// Wrap the canvas with the scrollable div
+canvas.parentNode.insertBefore(wrapper, canvas);
+wrapper.appendChild(canvas);
+
+var ctx = canvas.getContext('2d');
 
 // Example API (replace with your actual API endpoint)
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos'; // Mock data API endpoint
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-// Fetch data from the API
 fetch(apiUrl)
-.then(response => response.json()) // Parse the JSON data from the API
+.then(response => response.json())
 .then(data => {
-// For this demo, simulate the API returning the chart data structure
+// Generate 31 days of data for testing
 const chartData = {
-labels: ["10.11.2024", "11.11.2024", "12.11.2024", "13.11.2024"],
-tested: [30, 50, 70, 90],
-completed: [20, 40, 60, 80],
-reworked: [10, 30, 50, 70]
+labels: Array.from({ length: 31 }, (_, i) => `${i + 1}.01.2025`),
+tested: Array.from({ length: 31 }, (_, i) => (i + 1) * 10),
+completed: Array.from({ length: 31 }, (_, i) => (i + 1) * 8),
+reworked: Array.from({ length: 31 }, (_, i) => (i + 1) * 5)
 };
 
-// Create the chart with dynamic data
 var barChart = new Chart(ctx, {
 type: 'bar',
 data: {
-labels: chartData.labels, // Dynamically set labels from the API
+labels: chartData.labels,
 datasets: [
 {
 label: 'Tested',
-data: chartData.tested, // Dynamically set 'Tested' dataset
+data: chartData.tested,
 backgroundColor: '#ED7014',
 borderColor: 'rgba(54, 162, 235, 1)',
 borderWidth: 1
 },
 {
 label: 'Completed',
-data: chartData.completed, // Dynamically set 'Completed' dataset
+data: chartData.completed,
 backgroundColor: '#0B6623',
 borderColor: 'rgba(75, 192, 192, 1)',
 borderWidth: 1
 },
 {
 label: 'Reworked',
-data: chartData.reworked, // Dynamically set 'Reworked' dataset
-backgroundColor: '#c30010', // Increased opacity for better visibility
+data: chartData.reworked,
+backgroundColor: '#c30010',
 borderColor: 'rgba(255, 159, 64, 1)',
 borderWidth: 1
 }
@@ -960,13 +988,24 @@ borderWidth: 1
 },
 options: {
 responsive: true,
+maintainAspectRatio: false, // Allow the chart to adjust height
 scales: {
 y: {
-beginAtZero: true
+beginAtZero: true,
+min: 0,
+max: 350,
+ticks: {
+stepSize: 50
+}
 },
 x: {
 grid: {
 offset: true
+},
+ticks: {
+autoSkip: true, // Automatically skip labels if needed
+maxRotation: 45, // Rotate labels to fit
+minRotation: 0
 }
 }
 },
@@ -977,23 +1016,36 @@ position: 'top'
 }
 }
 });
+
+// Scroll to the rightmost position initially for desktop
+if (window.innerWidth > 768) {
+wrapper.scrollLeft = wrapper.scrollWidth;
+}
+
+// Adjust canvas size for mobile
+if (window.innerWidth <= 768) {
+canvas.style.minWidth = '1000px'; // Adjust this value for mobile
+}
 })
-.catch(error => console.error('Error fetching data:', error)); // Handle errors if the API request fails
+.catch(error => console.error('Error fetching data:', error));
 };
 </script>
 
-<script>
-  tailwind.config = {
-      theme: {
-          extend: {
-              colors: {
-                  royalPurple: '#8a00c2',
-              },
-          },
-      },
-  };
-</script>
 
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+royalPurple: '#8a00c2',
+Purple:'#4c00b0'
+},
+},
+},
+};
+
+</script>
 
 
 

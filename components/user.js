@@ -1,93 +1,91 @@
-// Sample users array to manage the user data
-let users = [
-{ id: 1, name: "B.Magesh", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
-{ id: 2, name: "U.Kamalesh waran", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
-{ id: 3, name: "M.Balaji", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
-{ id: 4, name: "J.jackson", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" },
-{ id: 5, name: "I.Monisha", createdDate: "02.12.2024", role: "Software Engineering", status: "Active" }
+// Select DOM elements
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const userModal = document.getElementById('userModal');
+const userForm = document.getElementById('userForm');
+const dataTable = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
 
-];
+// Track the user being edited (if any)
+let editingUser = null;
 
-// Function to render the user table
-function renderTable() {
-const tbody = document.querySelector("#dataTable tbody");
-tbody.innerHTML = ""; // Clear existing rows
-
-users.forEach((user, index) => {
-const row = document.createElement("tr");
-
-row.innerHTML = `
-<td class="border border-gray-300 text-center px-4 py-2">${index + 1}</td>
-<td class="border border-gray-300 text-center px-4 py-2">${user.name}</td>
-<td class="border border-gray-300 text-center px-4 py-2">${user.createdDate}</td>
-<td class="border border-gray-300 text-center px-4 py-2">${user.role}</td>
-<td class="border border-gray-300 text-center px-4 py-2">${user.status}</td>
-<td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
-<button onclick="editUser(${user.id})" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 flex items-center">
-<i class="fas fa-edit mr-2"></i> Edit
-</button>
-<button onclick="deleteUser(${user.id})" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 flex items-center">
-<i class="fas fa-trash mr-2"></i> Delete
-</button>
-</td>
-`;
-
-tbody.appendChild(row);
+// Function to open the modal
+openModalBtn.addEventListener('click', () => {
+    // Clear form fields if adding a new user
+    userForm.reset();
+    editingUser = null;
+    userModal.classList.remove('hidden');
 });
-}
 
-// Function to add a new user
-function addUser() {
-const name = prompt("Enter user name:");
-const role = prompt("Enter user role:");
-const status = prompt("Enter user status (Active/Inactive):");
-const createdDate = new Date().toLocaleDateString("en-GB");
+// Function to close the modal
+closeModalBtn.addEventListener('click', () => {
+    userModal.classList.add('hidden');
+});
 
-if (name && role && status) {
-const newUser = {
-id: users.length ? users[users.length - 1].id + 1 : 1,
-name,
-createdDate,
-role,
-status,
-};
-users.push(newUser);
-renderTable();
-} else {
-alert("All fields are required!");
-}
-}
+// Function to add or update user
+userForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-// Function to edit an existing user
-function editUser(id) {
-const user = users.find((u) => u.id === id);
-if (!user) return alert("User not found!");
+    // Get form values
+    const username = document.getElementById('username').value;
+    const createdDate = document.getElementById('createdDate').value;
+    const role = document.getElementById('role').value;
+    const status = document.getElementById('status').value;
 
-const name = prompt("Edit user name:", user.name);
-const role = prompt("Edit user role:", user.role);
-const status = prompt("Edit user status (Active/Inactive):", user.status);
+    // If editing, update the row
+    if (editingUser) {
+        editingUser.querySelector('.username').textContent = username;
+        editingUser.querySelector('.createdDate').textContent = createdDate;
+        editingUser.querySelector('.role').textContent = role;
+        editingUser.querySelector('.status').textContent = status;
+    } else {
+        // Add a new row to the table
+        const newRow = dataTable.insertRow();
 
-if (name && role && status) {
-user.name = name;
-user.role = role;
-user.status = status;
-renderTable();
-} else {
-alert("All fields are required!");
-}
-}
+        newRow.innerHTML = `
+            <td class="border border-gray-300 text-center px-4 py-2">${dataTable.rows.length}</td>
+            <td class="border border-gray-300 text-center px-4 py-2 username">${username}</td>
+            <td class="border border-gray-300 text-center px-4 py-2 createdDate">${createdDate}</td>
+            <td class="border border-gray-300 text-center px-4 py-2 role">${role}</td>
+            <td class="border border-gray-300 text-center px-4 py-2 status">${status}</td>
+            <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
+                <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 editBtn flex items-center">
+                    <i class="fas fa-edit mr-2"></i> Edit
+                </button>
+                <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 deleteBtn flex items-center">
+                    <i class="fas fa-trash mr-2"></i> Delete
+                </button>
+            </td>
+        `;
+    }
 
-// Function to delete a user
-function deleteUser(id) {
-if (confirm("Are you sure you want to delete this user?")) {
-users = users.filter((u) => u.id !== id);
-renderTable();
-}
-}
+    // Close the modal
+    userModal.classList.add('hidden');
+});
 
-// Attach add user button to the function
-const addButton = document.querySelector("button.bg-green-500");
-addButton.addEventListener("click", addUser);
+// Event delegation for editing and deleting users
+dataTable.addEventListener('click', (e) => {
+    if (e.target.closest('.editBtn')) {
+        const row = e.target.closest('tr');
+        const username = row.querySelector('.username').textContent;
+        const createdDate = row.querySelector('.createdDate').textContent;
+        const role = row.querySelector('.role').textContent;
+        const status = row.querySelector('.status').textContent;
 
-// Initial render
-renderTable();
+        // Populate the modal with user data
+        document.getElementById('username').value = username;
+        document.getElementById('createdDate').value = createdDate;
+        document.getElementById('role').value = role;
+        document.getElementById('status').value = status;
+
+        // Set the user to be edited
+        editingUser = row;
+
+        // Open the modal
+        userModal.classList.remove('hidden');
+    }
+
+    if (e.target.closest('.deleteBtn')) {
+        const row = e.target.closest('tr');
+        row.remove();
+    }
+});
