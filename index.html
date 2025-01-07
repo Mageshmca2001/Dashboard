@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGT-Dashboard</title>
+
+<!-- Tailwind CSS -->
+<script src="./script/tailwindcss.css"></script>
+
+<!-- Custom CSS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="./script/style.css">
+</head>
+
+<body class="bg-gray-100">
+<!-- Fixed Icons Container -->
+<div class="fixed top-2 right-3 z-50 flex items-center space-x-2">
+<button class="text-white hover:bg-gray-200 rounded-lg p-2">
+<i class='bx bxs-bell text-gray-700  text-2xl'></i>
+</button>
+<button class="text-white hover:bg-gray-200 rounded-lg p-2">
+<i class='bx bxs-user text-gray-700 text-2xl'></i>
+</button>
+</div>
+
+<!-- Overlay for mobile -->
+<div id="overlay" class="sidebar-overlay fixed inset-0 z-30 hidden bg-black bg-opacity-50 md:bg-opacity-0"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed top-0 left-0 z-50 w-64 h-screen transition-transform -translate-x-full"
+style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170, 0, 255, 0.7) 37%, rgba(204, 68, 153, 0.7) 100%), url('../script/Mac.jpg'); background-size: cover; background-position: center;">
+
+
+
+<!-- Sidebar content remains the same -->
+<div class="flex items-center justify-between p-4 border-b border-white">
+<div class="flex items-center space-x-3">
+<div class="bg-white p-2 rounded-lg shadow-md">
+<img src="./script/lg.png" alt="Logo" class="w-10 h-10 object-cover">
+</div>
+<span class="text-white text-base1 font-bold font-['Poppins']">BGT Dashboard</span>
+</div>
+<button id="closeSidebarBtn" class="text-gray-400 hover:text-white p-2 md:hidden">
+<i class='bx bx-x text-white text-3xl'></i>
+</button>
+</div>
+
+<div class="h-full px-3 py-4 overflow-y-auto">
+<ul class="space-y-2">
+<li>
+<a href="index.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<i class='bx bxs-dashboard text-xl text-gray-800 group-hover:text-black'></i>
+<span class="ml-3 text-gray-800  font-['Poppins']">Dashboard</span>
+</a>
+</li>
+
+<li>
+<a href="./components/Dailyreports.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<i class='bx bxs-file text-xl text-gray-800 group-hover:text-black'></i>
+<span class="ml-3 text-gray-800  font-['Poppins']">Reports</span>
+</a>
+</li>
+<li>
+<a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<i class='bx bxs-group text-xl text-gray-800 group-hover:text-black'></i>
+<span class="ml-3 text-gray-800  font-['Poppins']">Users</span>
+</a>
+</li>
+<li>
+</ul>
+</div>
+
+
+
+
+
+</aside>
+
+<!-- Header and Main Content -->
+<div id="main-content" class="min-h-screen flex flex-col transition-all duration-300 ease-in-out">
+<!-- Header -->
+<header class="bg-custom-gradient fixed w-full z-40 transition-all duration-300 ease-in-out">
+<div class="flex items-center h-14 px-3">
+<div class="flex items-center flex-grow">
+<button id="toggleButton" class="text-white hover:bg-gray-200 rounded-lg p-2">
+<i class='bx bx-menu text-gray-900 text-2xl'></i>
+</button>
+<h1 class="text-white font-bold font-['Poppins'] ml-2">Welcome to BGT Dashboard</h1>
+</div>
+<!-- Placeholder div to maintain header height -->
+<div class="w-24"></div>
+</div>
+</header>
+
+
+
+
+<!-- Main Content -->
+
+
+<main class="flex-1 p-4 mt-16">
+
+<div class="p-6">
+
+<!-- Grid container -->
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div class="bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 p-6 rounded-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div>
+
+<h2 class="text-3xl font-semibold text-white">
+3,500
+</h2>
+<p class="text-2xl font-semibold text-gray-200">
+Present Day
+</p>
+</div>
+
+
+<!-- Changed to red report icon -->
+
+<i class="bx bxs-time text-white text-5xl"></i>
+</div>
+<br>
+
+<div class="mt-4 flex justify-center space-x-4">
+<div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+Tested : 3000
+</div>
+
+<div class="bg-green-800 text-white p-2 rounded-lg text-center">
+Completed :500
+</div>
+</div>
+
+
+<!-- New section for "Key" and "Value" boxes -->
+
+</div>
+
+<div class="bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 p-6 rounded-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-semibold text-white">
+24,500
+</h2>
+<p class="text-2xl font-semibold text-gray-200">
+Present Week
+</p>
+</div>
+
+<!-- Changed to red report icon -->
+<i class='bx bxs-calendar-week text-white text-5xl' ></i>
+</div>
+<br>
+<div class="mt-4 flex justify-center space-x-4">
+<div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+Tested : 20,000
+</div>
+
+<div class="bg-green-800 text-white p-2 rounded-lg text-center">
+Completed :4,500
+</div>
+</div>
+</div>
+
+<div class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 p-6 rounded-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-semibold text-white">
+540,000
+</h2>
+<p class="text-2xl font-semibold text-gray-200">
+Present Month
+</p>
+</div>
+
+<!-- Changed to red report icon -->
+
+<i class="bx bxs-calendar text-white text-5xl"></i>
+</div>
+<br>
+<div class="mt-4 flex justify-center space-x-4">
+<div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+Tested : 400,000
+</div>
+
+<div class="bg-green-800 text-white p-2 rounded-lg text-center">
+Completed :100,000
+</div>
+</div>
+
+</div>
+
+<div class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-6 rounded-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-semibold text-white">
+6,480,000
+</h2>
+<p class="text-2xl font-semibold text-gray-200">
+Present Year
+</p>
+</div>
+<!-- Changed to red report icon -->
+<i class="bx bxs-cog text-white text-5xl"></i>
+</div>
+<br>
+<div class="mt-4 flex justify-center space-x-4">
+<div class="bg-orange-500 text-white p-2 rounded-lg text-center">
+Tested : 5,00,000
+</div>
+
+<div class="bg-green-800 text-white p-2 rounded-lg text-center">
+Completed :1,00,000
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</main>
+
+<script src="./script/chart.js"></script>
+<script src="./script/pagination.js"></script>
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+royalPurple: '#8a00c2',
+Purple:'#4c00b0'
+},
+},
+},
+};
+
+</script>
+</div>
+
+<script src="index.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+royalPurple: '#8a00c2',
+Purple: '#4c00b0'
+},
+
+backgroundImage: {
+'custom-gradient': 'linear-gradient(319deg, rgba(102, 61, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 37%, rgba(204, 68, 153, 0.8) 100%)',
+},
+fontSize: {
+base: '20px',
+base1: '15px',
+},
+fontFamily: {
+custom: ['poppins', 'sans-serif'],
+},
+},
+},
+};
+</script>
+</body>
+</html>
