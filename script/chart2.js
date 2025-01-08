@@ -41,7 +41,7 @@ const myChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Meter Testing Analysis by Hours'
+                text: 'Meter Testing Analysis by Serial Number'
             }
         },
         scales: {
@@ -55,7 +55,7 @@ const myChart = new Chart(ctx, {
             x: {
                 title: {
                     display: true,
-                    text: 'Hours'
+                    text: 'Serial Number'
                 }
             }
         },
