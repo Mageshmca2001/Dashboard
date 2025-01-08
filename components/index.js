@@ -80,4 +80,7 @@ function toggleDropdown(dropdownId) {
   
 
 
- 
+  document.getElementById("dropdownButton").addEventListener("click", () => {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    dropdownMenu.classList.toggle("hidden");
+});

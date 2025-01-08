@@ -71,9 +71,9 @@
   }
   
   .page-number.active {
-      background: #007bff;
+      background:linear-gradient(319deg, rgba(102, 61, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 37%, rgba(204, 68, 153, 0.8) 100%);
       color: white;
-      border-color: #007bff;
+      border-color: linear-gradient(319deg, rgba(102, 61, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 37%, rgba(204, 68, 153, 0.8) 100%);
   }
   
   .page-number:hover:not(.active) {
@@ -90,3 +90,8 @@
       overflow-x: auto;
       margin-bottom: 1rem;
   }
+
+  
+
+
+  

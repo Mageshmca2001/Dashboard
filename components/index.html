@@ -11,25 +11,26 @@
 <!-- Custom CSS -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="../script/style.css">
+<link rel="shortcut icon" href="../script/lg.png" />
 </head>
 
 <body class="bg-gray-100">
 <!-- Fixed Icons Container -->
 <div class="fixed top-2 right-3 z-50 flex items-center space-x-2">
 
-<button class="text-white hover:bg-gray-600 rounded-lg p-2">
-<i class='bx bxs-bell text-white text-2xl'></i>
+<button class="text-white hover:bg-gray-200 rounded-lg p-2">
+<i class='bx bxs-bell text-black text-2xl'></i>
 </button>
 
 <div class="relative inline-block w-full sm:w-auto">
   <!-- Button -->
   <button
     onclick="toggleDropdown('adminDropdown')"
-    class="flex items-center justify-between w-full sm:w-auto text-white hover:bg-gray-500 rounded-lg p-2"
+    class="flex items-center justify-between w-full sm:w-auto text-white hover:bg-gray-200 rounded-lg p-2"
   >
-    <i class="bx bxs-user-detail text-white text-2xl"></i>
-    <span class="ml-2 text-white font-medium hidden sm:inline">Admin</span>
-    <i id="dropdownIcon" class="bx bx-chevron-down ml-2 text-white"></i>
+    <i class="bx bxs-user-detail text-black text-2xl"></i>
+    <span class="ml-2 text-black font-medium hidden sm:inline">A</span>
+    <i id="dropdownIcon" class="bx bx-chevron-down ml-2 text-black"></i>
   </button>
 
   <!-- Dropdown -->
@@ -98,12 +99,12 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
     <!-- Dropdown -->
     <ul
       id="reportsDropdown"
-      class="hidden absolute left-0 w-full mt-2 space-y-2 bg-white rounded-lg shadow-lg"
+      class="hidden absolute left-0 w-full mt-2 space-y-2 bg-gray-200 rounded-lg shadow-lg"
     >
       <li>
         <a
           href="Dailyreports.html"
-          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
         >
           <i class="bx bx-timer text-base text-gray-800"></i>
           <span class="ml-2">Daily Reports</span>
@@ -112,26 +113,26 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
       <li>
         <a
           href="monthlyreports.html"
-          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+          class="flex items-center p-2 text-gray-800 rounded-lg  hover:bg-white"
         >
           <i class="bx bx-calendar-week text-lg text-gray-800"></i>
-          <span class="ml-2">Weekly Reports</span>
+          <span class="ml-2">Monthly Reports</span>
         </a>
       </li>
       <li>
         <a
           href="meterreports.html"
-          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
         >
           <i class="bx bx-calendar-star text-lg text-gray-800"></i>
-          <span class="ml-2">Monthly Reports</span>
+          <span class="ml-2">Meter Reports </span>
         </a>
       </li>
     </ul>
   </li>
   
 <li>
-<a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<a href="user.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
 <i class='bx bxs-group text-xl text-gray-800 group-hover:text-black'></i>
 <span class="ml-3 text-gray-800  font-['Poppins']">Users</span>
 </a>
