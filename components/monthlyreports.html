@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGT-Dashboard</title>
+
+<!-- Tailwind CSS -->
+<script src="../script/tailwindcss.css"></script>
+
+<!-- Custom CSS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="../script/style.css">
+</head>
+
+<body class="bg-gray-100">
+<!-- Fixed Icons Container -->
+<div class="fixed top-2 right-3 z-50 flex items-center space-x-2">
+
+<button class="text-white hover:bg-gray-600 rounded-lg p-2">
+<i class='bx bxs-bell text-white text-2xl'></i>
+</button>
+
+<div class="relative inline-block">
+  <!-- Button -->
+  <button
+    onclick="toggleDropdown('adminDropdown')"
+    class="flex items-center text-white hover:bg-gray-600 rounded-lg p-2"
+  >
+    <i class="bx bxs-user-detail text-white text-2xl"></i>
+    <span class="ml-2 text-white font-medium">Admin</span>
+    <i id="dropdownIcon" class="bx bx-chevron-down ml-2 text-white"></i>
+  </button>
+
+  <!-- Dropdown -->
+  <ul
+    id="adminDropdown"
+    class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg"
+  >
+    <li>
+      <button
+        onclick="logout()"
+        class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-t-lg"
+      >
+        Logout
+      </button>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+<!-- Overlay for mobile -->
+<div id="overlay" class="sidebar-overlay fixed inset-0 z-30 hidden bg-black bg-opacity-50 md:bg-opacity-0"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="fixed top-0 left-0 z-50 w-64 h-screen transition-transform -translate-x-full"
+style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170, 0, 255, 0.7) 37%, rgba(204, 68, 153, 0.7) 100%), url('../script/Mac.jpg'); background-size: cover; background-position: center;">
+
+
+
+<!-- Sidebar content remains the same -->
+<div class="flex items-center justify-between p-4 border-b border-white">
+<div class="flex items-center space-x-3">
+<div class="bg-white p-2 rounded-lg shadow-md">
+<img src="../script/lg.png" alt="Logo" class="w-10 h-10 object-cover">
+</div>
+<span class="text-white text-base1 font-bold font-['Poppins']">BGT Dashboard</span>
+</div>
+<button id="closeSidebarBtn" class="text-gray-400 hover:text-white p-2 md:hidden">
+<i class='bx bx-x text-white text-3xl'></i>
+</button>
+</div>
+
+<div class="h-full px-3 py-4 overflow-y-auto">
+<ul class="space-y-2">
+    
+<li>
+<a href="index.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<i class='bx bxs-dashboard text-xl text-gray-800 group-hover:text-black'></i>
+<span class="ml-3 text-gray-800  font-['Poppins']">Dashboard</span>
+</a>
+</li>
+
+<li class="relative">
+    <button
+      onclick="toggleDropdown('reportsDropdown')"
+      class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group w-full"
+    >
+      <i class="bx bxs-file text-xl text-gray-800 group-hover:text-black"></i>
+      <span class="ml-3 text-gray-800 font-['Poppins']">Reports</span>
+      <i id="dropdownIcon" class="bx bx-chevron-down ml-auto text-lg text-semibold text-gray-800 group-hover:text-black"></i>
+    </button>
+    <!-- Dropdown -->
+    <ul
+      id="reportsDropdown"
+      class="hidden absolute left-0 w-full mt-2 space-y-2 bg-white rounded-lg shadow-lg"
+    >
+      <li>
+        <a
+          href="Dailyreports.html"
+          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+        >
+          <i class="bx bx-timer text-base text-gray-800"></i>
+          <span class="ml-2">Daily Reports</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="WeeklyReports.html"
+          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+        >
+          <i class="bx bx-calendar-week text-lg text-gray-800"></i>
+          <span class="ml-2">Weekly Reports</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="MonthlyReports.html"
+          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
+        >
+          <i class="bx bx-calendar-star text-lg text-gray-800"></i>
+          <span class="ml-2">Monthly Reports</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  
+<li>
+<a href="#" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+<i class='bx bxs-group text-xl text-gray-800 group-hover:text-black'></i>
+<span class="ml-3 text-gray-800  font-['Poppins']">Users</span>
+</a>
+</li>
+<li>
+</ul>
+</div>
+
+
+
+
+
+</aside>
+
+<!-- Header and Main Content -->
+<div id="main-content" class="min-h-screen flex flex-col transition-all duration-300 ease-in-out">
+<!-- Header -->
+<header class="bg-custom-gradient fixed w-full z-40 transition-all duration-300 ease-in-out">
+<div class="flex items-center h-14 px-3">
+<div class="flex items-center flex-grow">
+<button id="toggleButton" class="text-white hover:bg-gray-200 rounded-lg p-2">
+<i class='bx bx-menu text-gray-900 text-2xl'></i>
+</button>
+<h1 class="text-white font-bold font-['Poppins'] ml-2">Welcome to BGT Dashboard</h1>
+</div>
+<!-- Placeholder div to maintain header height -->
+<div class="w-24"></div>
+</div>
+</header>
+
+
+
+
+<!-- Main Content -->
+
+
+<main class="flex-1 p-2 mt-16">
+
+
+
+
+
+</main>
+
+<script src="../script/chart.js"></script>
+<script src="../script/pagination.js"></script>
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+royalPurple: '#8a00c2',
+Purple:'#4c00b0'
+},
+},
+},
+};
+
+</script>
+</div>
+<script src="logout.js"></script>
+<script src="index.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+royalPurple: '#8a00c2',
+Purple: '#4c00b0'
+},
+
+backgroundImage: {
+'custom-gradient': 'linear-gradient(319deg, rgba(102, 61, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 37%, rgba(204, 68, 153, 0.8) 100%)',
+},
+fontSize: {
+base: '20px',
+base1: '15px',
+base2:'22px',
+},
+fontFamily: {
+custom: ['poppins', 'sans-serif'],
+},
+},
+},
+};
+</script>
+</body>
+</html>

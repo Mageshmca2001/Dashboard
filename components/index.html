@@ -21,28 +21,31 @@
 <i class='bx bxs-bell text-white text-2xl'></i>
 </button>
 
-<div class="relative inline-block">
+<div class="relative inline-block w-full sm:w-auto">
   <!-- Button -->
   <button
     onclick="toggleDropdown('adminDropdown')"
-    class="flex items-center text-white hover:bg-gray-600 rounded-lg p-2"
+    class="flex items-center justify-between w-full sm:w-auto text-white hover:bg-gray-500 rounded-lg p-2"
   >
     <i class="bx bxs-user-detail text-white text-2xl"></i>
-    <span class="ml-2 text-white font-medium">Admin</span>
+    <span class="ml-2 text-white font-medium hidden sm:inline">Admin</span>
     <i id="dropdownIcon" class="bx bx-chevron-down ml-2 text-white"></i>
   </button>
 
   <!-- Dropdown -->
   <ul
     id="adminDropdown"
-    class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg"
+    class="hidden absolute left-0 sm:right-0 mt-2 w-full sm:w-48 bg-white rounded-lg shadow-lg"
   >
     <li>
       <button
         onclick="logout()"
-        class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-t-lg"
+        class="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-t-lg flex items-center justify-center sm:justify-start"
       >
-        Logout
+        <!-- Icon for mobile -->
+        <i class="bx bx-log-out text-xl sm:hidden"></i>
+        <!-- Text for larger screens -->
+        <span class="hidden sm:inline">Logout</span>
       </button>
     </li>
   </ul>
@@ -108,7 +111,7 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
       </li>
       <li>
         <a
-          href="WeeklyReports.html"
+          href="monthlyreports.html"
           class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
         >
           <i class="bx bx-calendar-week text-lg text-gray-800"></i>
@@ -117,7 +120,7 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
       </li>
       <li>
         <a
-          href="MonthlyReports.html"
+          href="meterreports.html"
           class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-purple-200"
         >
           <i class="bx bx-calendar-star text-lg text-gray-800"></i>
@@ -166,6 +169,10 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
 
 
 <main class="flex-1 p-2 mt-16">
+
+<div class="text-Purple text-3xl font-bold font-['Poppins'] px-6 p-2"> Dashboard</div>
+
+<h1 class=" text-1xl text-gray-600 font-bold font-['poppins'] px-6  p-1">Management Information System </h1>
 
 
 

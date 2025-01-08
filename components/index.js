@@ -60,3 +60,24 @@ lastScreenWidth = currentWidth;
 if (window.innerWidth >= 768) {
 openSidebar();
 }
+
+
+
+function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const icon = document.getElementById("dropdownIcon");
+  
+    if (dropdown.classList.contains("hidden")) {
+      dropdown.classList.remove("hidden");
+      icon.classList.remove("bx-chevron-down");
+      icon.classList.add("bx-chevron-up");
+    } else {
+      dropdown.classList.add("hidden");
+      icon.classList.remove("bx-chevron-up");
+      icon.classList.add("bx-chevron-down");
+    }
+  }
+  
+
+
+ 
