@@ -48,7 +48,7 @@ userForm.addEventListener('submit', (e) => {
             <td class="border border-gray-300 text-center px-4 py-2 role">${role}</td>
             <td class="border border-gray-300 text-center px-4 py-2 status">${status}</td>
             <td class="border border-gray-300 text-center px-4 py-2 flex justify-center items-center space-x-2">
-                <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 editBtn flex items-center">
+                <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600 flex items-center">
                     <i class="bx bx-edit mr-2"></i> Edit
                 </button>
                 <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 deleteBtn flex items-center">

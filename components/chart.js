@@ -16,7 +16,7 @@ const inProgress = totalTested - totalCompleted - totalReworked;
 new Chart(pieCtx, {
     type: 'pie',
     data: {
-        labels: ['Completed', 'Reworked', 'In Progress'],
+        labels: ['Completed', 'Reworked', 'tested'],
         datasets: [{
             data: [totalCompleted, totalReworked, inProgress],
             backgroundColor: [

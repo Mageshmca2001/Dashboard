@@ -68,81 +68,82 @@ style="background: linear-gradient(319deg, rgba(102, 61, 255, 0.7) 0%, rgba(170,
 
 <!-- Sidebar content remains the same -->
 <div class="flex items-center justify-between p-4 border-b border-white">
-<div class="flex items-center space-x-3">
-<div class="bg-white p-2 rounded-lg shadow-md">
-<img src="../script/lg.png" alt="Logo" class="w-10 h-10 object-cover">
-</div>
-<span class="text-white text-base1 font-bold font-['Poppins']">BGT Dashboard</span>
-</div>
-<button id="closeSidebarBtn" class="text-gray-400 hover:text-white p-2 md:hidden">
-<i class='bx bx-x text-white text-3xl'></i>
-</button>
-</div>
-
-<div class="h-full px-3 py-4 overflow-y-auto">
-<ul class="space-y-2">
-
-<li>
-<a href="index.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
-<i class='bx bxs-dashboard text-xl text-gray-800 group-hover:text-black'></i>
-<span class="ml-3 text-gray-800  font-['Poppins']">Dashboard</span>
-</a>
-</li>
-
-<li class="relative">
-<button
-onclick="toggleDropdown('reportsDropdown')"
-class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group w-full"
->
-<i class="bx bxs-file text-xl text-gray-800 group-hover:text-black"></i>
-<span class="ml-3 text-gray-800 font-['Poppins']">Reports</span>
-<i id="dropdownIcon" class="bx bx-chevron-down ml-auto text-lg text-semibold text-gray-800 group-hover:text-black"></i>
-</button>
-<!-- Dropdown -->
-<ul
-id="reportsDropdown"
-class="hidden absolute left-0 w-full mt-2 space-y-2 bg-gray-200 rounded-lg shadow-lg"
->
-<li>
-<a
-href="Dailyreports.html"
-class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
->
-<i class="bx bx-timer text-base text-gray-800"></i>
-<span class="ml-2">Daily Reports</span>
-</a>
-</li>
-<li>
-<a
-href="monthlyreports.html"
-class="flex items-center p-2 text-gray-800 rounded-lg  hover:bg-white"
->
-<i class="bx bx-calendar-week text-lg text-gray-800"></i>
-<span class="ml-2">Monthly Reports</span>
-</a>
-</li>
-<li>
-<a
-href="meterreports.html"
-class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
->
-<i class="bx bx-calendar-star text-lg text-gray-800"></i>
-<span class="ml-2">Meter Reports</span>
-</a>
-</li>
-</ul>
-</li>
-
-<li>
-<a href="user.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
-<i class='bx bxs-group text-xl text-gray-800 group-hover:text-black'></i>
-<span class="ml-3 text-gray-800  font-['Poppins']">Users</span>
-</a>
-</li>
-<li>
-</ul>
-</div>
-
+    <div class="flex items-center space-x-3">
+    <div class="bg-white p-2 rounded-lg shadow-md">
+    <img src="../script/lg.png" alt="Logo" class="w-10 h-10 object-cover">
+    </div>
+    <span class="text-white text-base1 font-bold font-['Poppins']">BGT Dashboard</span>
+    </div>
+    <button id="closeSidebarBtn" class="text-gray-400 hover:text-white p-2 md:hidden">
+    <i class='bx bx-x text-white text-3xl'></i>
+    </button>
+    </div>
+    
+    <div class="h-full px-3 py-4 overflow-y-auto">
+    <ul class="space-y-2">
+    
+    <li>
+    <a href="index.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+    <i class='bx bxs-dashboard text-xl text-white group-hover:text-black'></i>
+    <span class="ml-3 text-white group-hover:text-black font-['Poppins']">Dashboard</span>
+    </a>
+    </li>
+    
+    <li class="relative">
+    <button
+    onclick="toggleDropdown('reportsDropdown')"
+    class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group w-full"
+    >
+    <i class="bx bxs-file text-xl text-white group-hover:text-black"></i>
+    <span class="ml-3 text-white  group-hover:text-black font-['Poppins']">Reports</span>
+    <i id="dropdownIcon" class="bx bx-chevron-down ml-auto text-lg text-semibold text-white group-hover:text-black"></i>
+    </button>
+    <!-- Dropdown -->
+    <ul
+    id="reportsDropdown"
+    class="hidden absolute left-0 w-full mt-2 space-y-2 bg-gray-200 rounded-lg shadow-lg"
+    >
+    <li>
+    <a
+    href="Dailyreports.html"
+    class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
+    >
+    <i class="bx bx-timer text-base text-gray-800"></i>
+    <span class="ml-2">Daily Reports</span>
+    </a>
+    </li>
+    <li>
+    <a
+    href="monthlyreports.html"
+    class="flex items-center p-2 text-gray-800 rounded-lg  hover:bg-white"
+    >
+    <i class="bx bx-calendar-week text-lg text-gray-800"></i>
+    <span class="ml-2">Monthly Reports</span>
+    </a>
+    </li>
+    <li>
+    <a
+    href="meterreports.html"
+    class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-white"
+    >
+    <i class="bx bx-calendar-star text-lg text-gray-800"></i>
+    <span class="ml-2">Meter Reports </span>
+    </a>
+    </li>
+    </ul>
+    </li>
+    
+    <li>
+    <a href="user.html" class="flex items-center p-3 text-white rounded-lg hover:bg-gray-200 group">
+    <i class='bx bxs-group text-xl text-white group-hover:text-black'></i>
+    <span class="ml-3 text-white group-hover:text-black font-['Poppins']">Users</span>
+    </a>
+    </li>
+    <li>
+    </ul>
+    </div>
+    
+    
 
 
 
